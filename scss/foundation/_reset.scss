@@ -1,3 +1,5 @@
+@use "../layout/common" as *;
+
 *,
 *::before,
 *::after {
@@ -15,6 +17,11 @@ body {
     font-size: 16px;
     line-height: 1.6;
     background-color: #F6F6F6;
+    min-width: 1280px;
+
+    @include mq("sp") {
+        min-width: initial;
+    }
 }
 
 img {

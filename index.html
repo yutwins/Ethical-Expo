@@ -44,8 +44,14 @@
 <body>
     <section class="hero">
         <div class="hero-noise"></div>
-        <img src="./images/EE-hero-slide-bg01.png" alt="ヒーロセクションブロック" class="hero__bg--left">
-        <img src="./images/EE-hero-slide-bg02.png" alt="ヒーロセクションブロック" class="hero__bg--right">
+        <picture>
+            <source srcset="./images/EE-hero-slide-bg01.png" media="(min-width: 768px)">
+            <img src="./images/EE-hero-slide-bg01-sp.png" alt="ヒーロセクションブロック" class="hero__bg--left">
+        </picture>
+        <picture>
+            <source srcset="./images/EE-hero-slide-bg02.png" media="(min-width: 768px)">
+            <img src="./images/EE-hero-slide-bg02-sp.png" alt="ヒーロセクションブロック" class="hero__bg--right">
+        </picture>
         <div class="hero-floatings">
             <img src="./images/EE-hero-floating01.png" alt="ブロック" class="hero-floating hero-floating01">
             <img src="./images/EE-hero-floating02.png" alt="ブロック" class="hero-floating hero-floating02">
@@ -61,12 +67,24 @@
             <div class="hero-slideTitleArea--vertical">
                 <h2 class="hero__slideTitle--vertical">エシカルの祭典</h2>
             </div>
+            <div class="hero-slideTitleArea--horizontalSp01">
+                <h2 class="hero__slideTitle--horizontalSp01">Z世代100団体で創る</h2>
+            </div>
+            <div class="hero-slideTitleArea--horizontalSp02">
+                <h2 class="hero__slideTitle--horizontalSp02">日本最大級の</h2>
+            </div>
+            <div class="hero-slideTitleArea--horizontalSp03">
+                <h2 class="hero__slideTitle--horizontalSp03">エシカルの祭典</h2>
+            </div>
         </div>
         <div class="hero-container">
             <div class="hero-containerTextArea">
                 <img src="./images/EE-hero-title-small.png" class="hero__title--small" alt="エシカルエキスポ">
                 <div class="hero-titleArea">
-                    <img src="./images/EE-hero-title.png" alt="タイトル" class="hero__title">
+                    <picture>
+                        <source srcset="./images/EE-hero-title.png" media="(min-width: 768px)">
+                        <img src="./images/EE-hero-title-sp.png" alt="タイトル" class="hero__title">
+                    </picture>
                 </div>
                 <div class="hero-place">
                     <img src="./images/EE-hero-place-icon.png" alt="地図アイコン" class="hero-place__icon">
