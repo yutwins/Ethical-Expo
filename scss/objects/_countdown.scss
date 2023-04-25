@@ -1,0 +1,74 @@
+@use "../foundation/global" as *;
+
+.countdown {
+    background-color: #000;
+    
+    &-inner {
+
+    }
+
+    &__title {
+        color: $PureWhite;
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+    }
+    
+    &-container {
+        text-align: center;
+    }
+    &-timeNum {
+        padding: 0 32px;
+        position: relative;
+        display: inline-block;
+        font-size: 100px;
+        line-height: 1;
+        font-weight: bold;
+        color: $PureWhite;
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            width: 2px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            background-color: $PureWhite;
+        }
+        &::before {
+            left: 0;
+        }
+        &::after {
+            right: 0;
+        }
+
+        &:nth-child(1) {
+            &::before {
+                display: none;
+            }
+        }
+        &:nth-child(2) {
+            
+        }
+        &:nth-child(3) {
+
+            &::after {
+                display: none;
+            }
+
+        }
+    }
+    &-timeUnit {
+        display: block;
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    &-done {
+        color: $PureWhite;
+        text-align: center;
+        font-size: 40px;
+        font-weight: bold;
+    }
+}

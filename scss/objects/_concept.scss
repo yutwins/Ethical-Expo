@@ -1,0 +1,48 @@
+@use "../foundation/global" as *;
+
+.concept {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 160%;
+        height:300px;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url(../../images/EE-concept-bgText.png) no-repeat center center / contain;
+    }
+
+    &-inner {
+        padding-top: 150px;
+    }
+
+    &__head {
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        font-size: 77px;
+        line-height: 1;
+        background-color: $color_black01;
+        color: $PureWhite;
+
+        &:not(:first-child) {
+            margin-top: 22px;
+        }
+    }
+
+    &-textArea {
+        position: relative;
+        z-index: 2;
+        max-width: 580px;
+        margin-left: auto;
+    }
+    &__text {
+        margin-top: 64px;
+        line-height: 2.3em;
+        font-weight: bold;
+    }
+}
