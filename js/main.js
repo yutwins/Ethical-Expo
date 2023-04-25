@@ -1,9 +1,33 @@
 document.addEventListener("DOMContentLoaded", function() {
   const slideTitleHorizontal = document.querySelector(".hero__slideTitle--horizontal");
   const slideTitleVertical = document.querySelector(".hero__slideTitle--vertical");
+  const heroBgLeft = document.querySelector(".hero__bg--left");
+  const heroBgRight = document.querySelector(".hero__bg--right");
+  const heroFloat01 = document.querySelector(".hero-floating01");
+  const heroFloat02 = document.querySelector(".hero-floating02");
+  const heroFloat03 = document.querySelector(".hero-floating03");
+  const heroFloat04 = document.querySelector(".hero-floating04");
+  const heroFloat05 = document.querySelector(".hero-floating05");
+  const heroFloat06 = document.querySelector(".hero-floating06");
+  const heroTitle = document.querySelector(".hero__title");
+  const heroTitleSmall = document.querySelector(".hero__title--small");
+  const heroDate = document.querySelector(".hero-dateArea__img");
+  const heroPlace = document.querySelector(".hero-place");
 
   slideTitleHorizontal.style.animationPlayState = "running";
   slideTitleVertical.style.animationPlayState = "running";
+  heroBgLeft.style.animationPlayState = "running";
+  heroBgRight.style.animationPlayState = "running";
+  heroFloat01.style.animationPlayState = "running";
+  heroFloat02.style.animationPlayState = "running";
+  heroFloat03.style.animationPlayState = "running";
+  heroFloat04.style.animationPlayState = "running";
+  heroFloat05.style.animationPlayState = "running";
+  heroFloat06.style.animationPlayState = "running";
+  heroTitle.style.animationPlayState = "running";
+  heroTitleSmall.style.animationPlayState = "running";
+  heroDate.style.animationPlayState = "running";
+  heroPlace.style.animationPlayState = "running";
 });
 //ページの読み込みが完了したタイミングで、DOMContentLoadedイベントをトリガーして、アニメーション "horizontal", "vertical"など を発火させる。animationPlayStateプロパティを "running" に設定することで、アニメーションを開始します。
 

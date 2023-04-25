@@ -684,6 +684,9 @@ p {
 .countdown {
   background-color: #000;
 }
+.countdown-inner {
+  padding: 120px 0;
+}
 .countdown__title {
   color: #fff;
   text-align: center;
