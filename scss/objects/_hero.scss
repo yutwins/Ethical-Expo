@@ -29,7 +29,6 @@
         left: 0;
         background: url(../../images/EE-noise-bg.png) no-repeat center center / cover;
         z-index: 5;
-        display: none;
     }
 
     &__bg {
@@ -80,7 +79,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 10;
+        // z-index: 10;
 
         @include animation(
             $name: Opacity,
@@ -104,7 +103,7 @@
         }
 
         @include animation(
-            $name: float03,
+            $name: float01,
             $iteration-count: infinite,
             $duration: 2s,
         )
@@ -149,7 +148,7 @@
         left: 80%;
 
         @include animation(
-            $name: float02,
+            $name: float03,
             $iteration-count: infinite,
             $duration: 2s,
         )
@@ -166,9 +165,9 @@
         }
 
         @include animation(
-            $name: float01,
+            $name: float03,
             $iteration-count: infinite,
-            $duration: 2s,
+            $duration: 2.1s,
         )
     }
     &-floating06 {
@@ -183,7 +182,58 @@
         }
 
         @include animation(
-            $name: float03,
+            $name: float02,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating07 {
+        width: 80px;
+        bottom: 40%;
+        right: 25%;
+
+        @include mq("sp") {
+            width: 50px;
+            bottom: 350px;
+            left: 12%;
+        }
+
+        @include animation(
+            $name: float02,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating08 {
+        width: 80px;
+        bottom: 80px;
+        left: 55%;
+
+        @include mq("sp") {
+            width: 50px;
+            bottom: 80px;
+            left: 12%;
+        }
+
+        @include animation(
+            $name: float01,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating09 {
+        width: 80px;
+        bottom: 50%;
+        right: 1%;
+
+        @include mq("sp") {
+            width: 50px;
+            bottom: 150px;
+            right: 12%;
+        }
+
+        @include animation(
+            $name: float01,
             $iteration-count: infinite,
             $duration: 2s,
         )
@@ -213,7 +263,7 @@
             height: 76px;
         }
         &--vertical {
-            height: 460px;
+            height: 470px;
             width: 76px;
             margin-left: auto;
         }
@@ -250,6 +300,7 @@
             top: 0;
             right: 0;
             transform: translateY(100%);
+            padding-left: 15px;
             
             @include animation(
                 $name: horizontal,
@@ -266,6 +317,7 @@
             letter-spacing: -.15em;
             right: 0;
             transform: translateX(100%);
+            padding-bottom: 5px;
 
             @include animation(
                 $name: vertical,
@@ -300,11 +352,6 @@
                 $timing-function: ease-in-out,
                 $delay: 1s,
             )
-        }
-        &--horizontalSp02 {
-            
-        }
-        &--horizontalSp03 {
         }
     }
 
@@ -420,7 +467,7 @@
 
         @include animation(
             $name: fadeUp,
-            $duration: 2s,
+            $duration: 3.2s,
             $timing-function: ease-in-out,
         )
     }
@@ -455,21 +502,21 @@
     @keyframes fadeInSlideInHorizontal {
         0% {
             transform: translateY(-100%);
-            opacity: 0;
+            filter: blur(100px);
         }
         100% {
             transform: translateY(0%);
-            opacity: 1;
+            filter: blur(0);
         }
     }
     @keyframes fadeInSlideInVertical {
         0% {
             transform: translateX(100%);
-            opacity: 0;
+            filter: blur(100px);
         }
         100% {
             transform: translateX(0%);
-            opacity: 1;
+            filter: blur(0);
         }
     }
 

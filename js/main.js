@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function() {
   const heroFloat04 = document.querySelector(".hero-floating04");
   const heroFloat05 = document.querySelector(".hero-floating05");
   const heroFloat06 = document.querySelector(".hero-floating06");
+  const heroFloat07 = document.querySelector(".hero-floating07");
+  const heroFloat08 = document.querySelector(".hero-floating08");
+  const heroFloat09 = document.querySelector(".hero-floating09");
   const heroTitle = document.querySelector(".hero__title");
   const heroTitleSmall = document.querySelector(".hero__title--small");
   const heroDate = document.querySelector(".hero-dateArea__img");
@@ -24,6 +27,9 @@ document.addEventListener("DOMContentLoaded", function() {
   heroFloat04.style.animationPlayState = "running";
   heroFloat05.style.animationPlayState = "running";
   heroFloat06.style.animationPlayState = "running";
+  heroFloat07.style.animationPlayState = "running";
+  heroFloat08.style.animationPlayState = "running";
+  heroFloat09.style.animationPlayState = "running";
   heroTitle.style.animationPlayState = "running";
   heroTitleSmall.style.animationPlayState = "running";
   heroDate.style.animationPlayState = "running";
