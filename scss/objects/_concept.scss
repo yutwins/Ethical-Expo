@@ -32,6 +32,20 @@
         &:not(:first-child) {
             margin-top: 22px;
         }
+
+        &--horizontal {
+
+            &.scroll {
+
+                @include animation(
+                $name: horizontal,
+                $iteration-count: 1,
+                $duration: 1.5s,
+                $timing-function: ease-in-out,
+                $delay: 1s,
+            )
+            }
+        }
     }
 
     &-textArea {

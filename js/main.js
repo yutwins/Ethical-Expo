@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", function() {
   const heroFloat07 = document.querySelector(".hero-floating07");
   const heroFloat08 = document.querySelector(".hero-floating08");
   const heroFloat09 = document.querySelector(".hero-floating09");
+  const heroFloat10 = document.querySelector(".hero-floating10");
+  const heroFloat11 = document.querySelector(".hero-floating11");
+  const heroFloat12 = document.querySelector(".hero-floating12");
+  const heroFloat13 = document.querySelector(".hero-floating13");
+  const heroFloat14 = document.querySelector(".hero-floating14");
   const heroTitle = document.querySelector(".hero__title");
   const heroTitleSmall = document.querySelector(".hero__title--small");
   const heroDate = document.querySelector(".hero-dateArea__img");
@@ -30,12 +35,18 @@ document.addEventListener("DOMContentLoaded", function() {
   heroFloat07.style.animationPlayState = "running";
   heroFloat08.style.animationPlayState = "running";
   heroFloat09.style.animationPlayState = "running";
+  heroFloat10.style.animationPlayState = "running";
+  heroFloat11.style.animationPlayState = "running";
+  heroFloat12.style.animationPlayState = "running";
+  heroFloat13.style.animationPlayState = "running";
+  heroFloat14.style.animationPlayState = "running";
   heroTitle.style.animationPlayState = "running";
   heroTitleSmall.style.animationPlayState = "running";
   heroDate.style.animationPlayState = "running";
   heroPlace.style.animationPlayState = "running";
 });
 //ページの読み込みが完了したタイミングで、DOMContentLoadedイベントをトリガーして、アニメーション "horizontal", "vertical"など を発火させる。animationPlayStateプロパティを "running" に設定することで、アニメーションを開始します。
+
 
 
 // カウントダウン

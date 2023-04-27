@@ -18,7 +18,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        background: url(../../images/EE-hero-bg.png) no-repeat center center / cover;
+        background: url(../images/EE-hero-bg.png) no-repeat center center / cover;
     }
 
     &-noise {
@@ -37,9 +37,10 @@
         &--right {
             position: absolute;
             height: auto;
+            opacity: 0;
         }
         &--left {
-            width: 305px;
+            width: 260px;
             top: 0;
             left: 0;
 
@@ -51,12 +52,13 @@
             @include animation(
                 $name: fadeInSlideInHorizontal,
                 $iteration-count: 1,
-                $duration: 1.5s,
+                $duration: 1s,
+                $delay: .5s,
                 $timing-function: ease-in-out,
             )
         }
         &--right {
-            width: 600px;
+            width: 375px;
             right: 0;
             bottom: 0;
 
@@ -68,7 +70,8 @@
             @include animation(
                 $name: fadeInSlideInVertical,
                 $iteration-count: 1,
-                $duration: 1.5s,
+                $duration: 1s,
+                $delay: .5s,
                 $timing-function: ease-in-out,
             )
         }
@@ -79,12 +82,14 @@
         position: absolute;
         top: 0;
         left: 0;
-        // z-index: 10;
+        opacity: 0;
 
         @include animation(
             $name: Opacity,
             $iteration-count: 1,
             $duration: 3s,
+            $delay: 2.5s,
+            $timing-function: ease-in-out,
         )
     }
     &-floating {
@@ -234,6 +239,86 @@
 
         @include animation(
             $name: float01,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating10 {
+        width: 70px;
+        top: 23%;
+        left: 11%;
+
+        @include mq("sp") {
+            width: 50px;
+            top: 20%;
+            left: 12%;
+            display: none;
+        }
+
+        @include animation(
+            $name: float04,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating11 {
+        width: 100px;
+        top: 0%;
+        left: 48%;
+
+        @include mq("sp") {
+            width: 50px;
+        }
+
+        @include animation(
+            $name: float04,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating12 {
+        width: 100px;
+        top: 10%;
+        right: 8%;
+
+        @include mq("sp") {
+            width: 70px;
+        }
+
+        @include animation(
+            $name: float02,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating13 {
+        width: 50px;
+        top: 0;
+        left: 25%;
+
+        @include mq("sp") {
+            width: 70px;
+            display: none;
+        }
+
+        @include animation(
+            $name: float01,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating14 {
+        width: 100px;
+        bottom: 3%;
+        right: 22%;
+
+        @include mq("sp") {
+          width: 70px;
+          
+        }
+
+        @include animation(
+            $name: float04,
             $iteration-count: infinite,
             $duration: 2s,
         )
@@ -501,21 +586,25 @@
     
     @keyframes fadeInSlideInHorizontal {
         0% {
-            transform: translateY(-100%);
+            transform: translateY(-20%);
+            opacity: 0;
             filter: blur(100px);
         }
         100% {
             transform: translateY(0%);
+            opacity: 1;
             filter: blur(0);
         }
     }
     @keyframes fadeInSlideInVertical {
         0% {
-            transform: translateX(100%);
+            transform: translateX(20%);
+            opacity: 0;
             filter: blur(100px);
         }
         100% {
             transform: translateX(0%);
+            opacity: 1;
             filter: blur(0);
         }
     }
@@ -548,6 +637,17 @@
         }
         50% {
           transform: translate(-10px, -10px);
+        }
+        100% {
+          transform: translate(0, 0);
+        }
+    }
+    @keyframes float04 {
+        0% {
+          transform: translate(0, 0);
+        }
+        50% {
+          transform: translate(10px, -10px);
         }
         100% {
           transform: translate(0, 0);

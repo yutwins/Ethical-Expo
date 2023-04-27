@@ -5,6 +5,10 @@
     
     &-inner {
         padding: 120px 0;
+
+        @include mq("sp") {
+            padding: 60px 0;
+        }
     }
 
     &__title {
@@ -12,19 +16,26 @@
         text-align: center;
         font-size: 40px;
         font-weight: bold;
+
+        @include mq("sp") {
+            font-size: 25px;
+        }
     }
     
     &-container {
         text-align: center;
     }
     &-timeNum {
-        padding: 0 32px;
         position: relative;
         display: inline-block;
         font-size: 100px;
         line-height: 1;
         font-weight: bold;
         color: $PureWhite;
+
+        @include mq("sp") {
+            font-size: 70px;
+        }
 
         &::before,
         &::after {
@@ -44,17 +55,32 @@
         }
 
         &:nth-child(1) {
+            padding-right: 32px;
+
             &::before {
                 display: none;
             }
+
+            @include mq("sp") {
+                padding-right: 16px;
+            }
         }
         &:nth-child(2) {
-            
+            padding: 0 32px;
+
+            @include mq("sp") {
+                padding: 0 16px;
+            }
         }
         &:nth-child(3) {
-
+            padding-left: 32px;
+            
             &::after {
                 display: none;
+            }
+
+            @include mq("sp") {
+                padding-left: 16px;
             }
 
         }
@@ -63,6 +89,10 @@
         display: block;
         font-size: 24px;
         line-height: 1;
+
+        @include mq("sp") {
+            font-size: 16px;
+        }
     }
 
     &-done {
