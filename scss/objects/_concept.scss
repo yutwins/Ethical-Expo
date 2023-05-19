@@ -3,60 +3,274 @@
 .concept {
     position: relative;
     overflow: hidden;
+    background-color: $color-gray01;
 
     &::after {
         content: "";
         display: block;
         width: 160%;
-        height:300px;
+        width: 100%;
+        height: 300px;
         position: absolute;
-        top: 70%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        background: url(../../images/EE-concept-bgText.png) no-repeat center center / contain;
+        background: url(../../images/EE-concept-bgText.png) repeat-x;
+        background-size: 50%;
+        background-size: cover;
+	    animation: scroll-anim 10s linear infinite;
+    }
+
+    @include mq("sp") {
+
+        &::after {
+            height: 100px;
+        }
+    }
+
+    @keyframes scroll-anim {
+        100% {
+            background-position: 100% 0;
+        }
+    }
+
+    &-floatings {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 5;
+        
+        &.visible {
+
+            @include animation(
+                $name: Opacity,
+                $iteration-count: 1,
+                $duration: 3s,
+                $delay: 2.5s,
+                $timing-function: ease-in-out,
+            )
+        }
+    }
+
+    &-floating {
+        position: absolute;
+        height: auto;
+    }
+    &-floating01{
+        width: 50px;
+        top: 35%;
+        left: 10%;
+
+        @include mq("sp") {
+            width: 50px;
+            top: 80%;
+            left: 60%;
+        }
+
+        @include animation(
+            $name: float01,
+            $iteration-count: infinite,
+            $duration: 1s,
+        )
+    }
+    &-floating02 {
+        width: 100px;
+        top: 40%;
+        right: 3%;
+
+        @include mq("sp") {
+            width: 80px;
+            top: 30%;
+        }
+
+        @include animation(
+            $name: float02,
+            $iteration-count: infinite,
+            $duration: 1s,
+        )
+    }
+    &-floating03 {
+        width: 100px;
+        top: 50%;
+        left: 2%;
+
+        @include mq("sp") {
+            width: 100px;
+            top: 70%;
+            left: 70%;
+        }
+
+        @include animation(
+            $name: float03,
+            $iteration-count: infinite,
+            $duration: 1s,
+        )
+    }
+    &-floating04 {
+        width: 40px;
+        top: 52%;
+        right: 10%;
+
+        @include mq("sp") {
+            width: 40px;
+            top: 20%;
+            left: 85%;
+        }
+
+        @include animation(
+            $name: float03,
+            $iteration-count: infinite,
+            $duration: 1s,
+        )
+    }
+    &-floating05 {
+        width: 30px;
+        top: 60%;
+        left: 10%;
+    
+        @include mq("sp") {
+            width: 20px;
+            top: 40%;
+            left: 88%;
+        }
+    
+        @include animation(
+            $name: float04,
+            $iteration-count: infinite,
+            $duration: 1s,
+        )
+
     }
 
     &-inner {
-        padding-top: 150px;
-    }
-
-    &__head {
+        padding: 330px 0;
+        max-width: 700px;
+        margin: 0 auto;
         position: relative;
-        z-index: 2;
-        display: inline-block;
-        font-size: 77px;
-        line-height: 1;
-        background-color: $color_black01;
-        color: $PureWhite;
+        z-index: 5;
 
-        &:not(:first-child) {
-            margin-top: 22px;
+        @include mq("sp") {
+            padding: 115px 0;
+
         }
 
-        &--horizontal {
+    }
 
-            &.scroll {
+    &-msgArea {
 
-                @include animation(
-                $name: horizontal,
-                $iteration-count: 1,
-                $duration: 1.5s,
-                $timing-function: ease-in-out,
-                $delay: 1s,
-            )
+    }
+
+    &__msg {
+        font-size: 25px;
+        font-weight: bold;
+        line-height: 2;
+
+        @include mq("sp") {
+            font-size: 18px;
+        }
+        
+        &:not(:first-child) {
+            margin-top: 50px;
+
+            @include mq("sp") {
+                margin-top: 28px;
             }
         }
+        
     }
+    &__msg0 {
+        opacity: 0;
+        display: inline-block;
+    }
+    &__msg01 {
 
-    &-textArea {
-        position: relative;
-        z-index: 2;
-        max-width: 580px;
-        margin-left: auto;
+        &.visible {
+    
+            @include animation(
+                $name: fadeUp,
+                $duration: 1.5s,
+                $timing-function: ease-in-out,
+            )
+        }
     }
-    &__text {
-        margin-top: 64px;
-        line-height: 2.3em;
+    &__msg02 {
+        
+        &.visible {
+    
+            @include animation(
+                $name: fadeUp,
+                $duration: 1.5s,
+                $delay: .2s,
+                $timing-function: ease-in-out,
+            )
+        }
+    }
+    &__msg03 {
+        
+        &.visible {
+    
+            @include animation(
+                $name: fadeUp,
+                $duration: 1.5s,
+                $delay: .4s,
+                $timing-function: ease-in-out,
+            )
+        }
+    }
+    
+    &-headArea {
+        overflow: hidden;
+
+        @include mq("sp") {
+            margin-top: 40px;
+        }
+    }
+    &__head {
+        display: inline-block;
+        margin-top: 65px;
+        font-size: 60px;
+        line-height: 1.22;
+        letter-spacing: -.1em;
         font-weight: bold;
+        background-color: $color_black01;
+        color: $PureWhite;
+        opacity: 0;
+
+        @include mq("sp") {
+            margin-top: 0;
+            font-size: 30px;
+        }
+        &:nth-child(2) {
+            
+            @include mq("sp") {
+                margin-bottom: 8px;
+            }
+        }
+        &.pc-only {
+            
+            @include mq("sp") {
+                display: none;
+            }
+        }
+        &.sp-only {
+            display: none;
+
+            @include mq("sp") {
+                display: inline-block;
+            }
+        }
+    
+        &.visible {
+    
+            @include animation(
+                $name: fadeUp,
+                $duration: 1.5s,
+                $timing-function: ease-in-out,
+            )
+        }
     }
+    
 }

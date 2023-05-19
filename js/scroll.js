@@ -1,52 +1,64 @@
+  // 要素が完全に画面内に入ったらクラスを付与する
+  // function isElementInViewport(el) {
+  //   const rect = el.getBoundingClientRect();
+  //   return (
+  //     rect.top >= 0 &&
+  //     rect.left >= 0 &&
+  //     rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+  //     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  //   );
+  // }
 
-// function isInViewport(el) {
-//     const rect = el.getBoundingClientRect();
-// }
-
-// function isElementInViewport(el) {
-//     const rect = el.getBoundingClientRect();
-//     return (
-//       rect.top >= 0 &&
-//       rect.left >= 0 &&
-//       rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-//       rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-//     );
-//   }
-  
-//   function addScrollClassToElementA() {
-//     const elementA = document.querySelector('.concept__head--horizontal'); // 要素Aのクラス名を指定
-  
-//     if (isElementInViewport(elementA)) {
-//       elementA.classList.add('scroll');
-//     } else {
-//       elementA.classList.remove('scroll');
-//     }
-//   }
-  
-//   window.addEventListener('scroll', addScrollClassToElementA);
-
+  // 要素が一部でも画面内に入ったらクラスを付与する
   function isElementInViewport(el) {
     const rect = el.getBoundingClientRect();
     return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.left < (window.innerWidth || document.documentElement.clientWidth) &&
+      rect.bottom > 0 &&
+      rect.right > 0
     );
   }
   
-  function addScrollClassToElementA() {
-    const elementA = document.querySelector('.concept__head--horizontal'); // 要素Aのクラス名を指定
   
-    if (isElementInViewport(elementA) && !elementA.classList.contains('scroll')) {
-      elementA.classList.add('scroll');
-    }
-    // 毎回クラスを削除する必要がある場合は、以下のコメントアウトを外す
-    // if (isElementInViewport(elementA)) {
-    //   elementA.classList.add('scroll');
-    // } else {
-    //   elementA.classList.remove('scroll');
-    // }
+  function addScrollClassToElementA() {
+    const elementsA = document.querySelectorAll('.concept__head');
+    
+    elementsA.forEach((elementA) => {
+      if (isElementInViewport(elementA) && !elementA.classList.contains('visible')) {
+        elementA.classList.add('visible');
+      }
+    });
   }
   
-  window.addEventListener('scroll', addScrollClassToElementA);
+  function addClassToChildElements() {
+    const elements = document.querySelectorAll('.concept__msg');
+    
+    elements.forEach((element) => {
+      if (isElementInViewport(element)) {
+        element.childNodes.forEach((child) => {
+          // Check if the child node is an element node
+          if (child.nodeType === Node.ELEMENT_NODE) {
+            if (!child.classList.contains('visible')) {
+              child.classList.add('visible');
+            }
+          }
+        });
+      }
+    });
+  }
+
+  function addScrollClassToConceptFloat() {
+    const ConceptFloat = document.querySelector('.concept-floatings');
+    
+    if (isElementInViewport(ConceptFloat) && !ConceptFloat.classList.contains('visible')) {
+      ConceptFloat.classList.add('visible');
+    }
+  }
+  
+  window.addEventListener('scroll', () => {
+    addScrollClassToElementA();
+    addClassToChildElements();
+    addScrollClassToConceptFloat();
+  });
+  

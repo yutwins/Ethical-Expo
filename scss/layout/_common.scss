@@ -21,3 +21,18 @@ $breakpoints: (
     // max-width: 100%;
     // margin: 0 auto;
 }
+
+.pc-only {
+    display: block;
+
+    @include mq("sp") {
+        display: none;
+    }
+}
+.sp-only {
+    display: none;
+
+    @include mq("sp") {
+        display: block;
+    }
+}

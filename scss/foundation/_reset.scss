@@ -1,4 +1,6 @@
 @use "../layout/common" as *;
+@use "../foundation/variables" as *;
+@use "../foundation/color" as *;
 
 *,
 *::before,
@@ -13,11 +15,12 @@ body {
 }
 
 body {
-    font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    font-family: $ZKGN;
     font-size: 16px;
     line-height: 1.6;
     background-color: #F6F6F6;
     min-width: 1280px;
+    color: $color_black01;
 
     @include mq("sp") {
         min-width: initial;
