@@ -55,10 +55,22 @@
       ConceptFloat.classList.add('visible');
     }
   }
+
+  // contentsセクションの要素が画面内に入ったらクラスを付与する
+  function addScrollClassToContentItem() {
+    const contentsItems = document.querySelectorAll('.contents-item');
+    
+    contentsItems.forEach((contentsItem) => {
+      if (isElementInViewport(contentsItem) && !contentsItem.classList.contains('visible')) {
+        contentsItem.classList.add('visible');
+      }
+    });
+  }
   
   window.addEventListener('scroll', () => {
     addScrollClassToElementA();
     addClassToChildElements();
     addScrollClassToConceptFloat();
+    addScrollClassToContentItem();
   });
   

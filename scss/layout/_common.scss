@@ -14,7 +14,7 @@ $breakpoints: (
 }
 
 .inner {
-    width: min(100% - 2rem, 1200px);
+    width: min(100% - 2rem, 1140px);
     margin-inline: auto;
     
     // width: 1200px;
@@ -35,4 +35,8 @@ $breakpoints: (
     @include mq("sp") {
         display: block;
     }
+}
+
+.section__title {
+    
 }

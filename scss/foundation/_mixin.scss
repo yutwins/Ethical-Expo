@@ -127,6 +127,16 @@
         opacity: 1;
     }
 }
+@keyframes fadeUpMin {
+    0% {
+        transform: translateY(10%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
 @keyframes fadeUpHeroTitle {
     0% {
         transform: translateY(75%);
