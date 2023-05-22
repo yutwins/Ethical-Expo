@@ -1,0 +1,388 @@
+@use "../foundation/global" as *;
+
+.team {
+    position: relative;
+
+    &-floatings {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+
+        &.visible {
+            
+            @include animation(
+                $name: Opacity,
+                $iteration-count: 1,
+                $duration: 3s,
+                $delay: 2.5s,
+                $timing-function: ease-in-out,
+            )
+        }
+    }
+
+    &-floating {
+        position: absolute;
+        height: auto;
+    }
+    &-floating01 {
+        width: 80px;
+        top: 20%;
+        left: 5%;
+
+        @include mq("sp") {
+            width: 60px;
+            top: 0;
+            left: 10%;
+        }
+
+        @include animation(
+            $name: float01,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating02 {
+        width: 80px;
+        top: 21%;
+        right: 0;
+
+        @include mq("sp") {
+            width: 60px;
+            top: 32px;
+            right: 8%;
+        }
+
+        @include animation(
+            $name: float02,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating03 {
+        width: 100px;
+        top: 30%;
+        left: 0;
+
+        @include mq("sp") {
+            width: 90px;
+            top: 40px;
+            left: -5%;
+        }
+
+        @include animation(
+            $name: float03,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating04 {
+        width: 50px;
+        top: 32%;
+        right: 5%;
+
+        @include mq("sp") {
+            width: 50px;
+            top: 12%;
+            right: 5%;
+        }
+
+        @include animation(
+            $name: float04,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating05 {
+        width: 24px;
+        top: 50%;
+        left: 10%;
+
+        @include mq("sp") {
+            width: 15px;
+            top: 12%;
+            left: 5%;
+        }
+
+        @include animation(
+            $name: float02,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+
+    
+    &-inner {
+        padding-top: 200px;
+        padding-bottom: 200px;
+
+        @include mq("sp") {
+            padding-top: 100px;
+        }
+    }
+
+    &__title {
+        line-height: 1;
+        text-align: center;
+    }
+
+    &-subTitleArea {
+        margin-top: 20px;
+        text-align: center;
+        overflow: hidden;
+
+        @include mq("sp") {
+            margin-top: 4px;
+        }
+    }
+    &__subTitle {
+        display: inline-block;
+        background-color: $PureBlack;
+        font-size: 35px;
+        line-height: 1;
+        font-weight: bold;
+        color: $PureWhite;
+        opacity: 0;
+
+        @include mq("sp") {
+            font-size: 22px;
+        }
+
+        &.visible {
+            
+            @include animation(
+                $name: fadeUpHeroTitle,
+                $duration: 2.5s,
+                $timing-function: ease-in-out,
+            )
+        }
+
+    }
+
+    
+    &-wrap {
+        max-width: 960px;
+        margin: 80px auto 0;
+        opacity: 0;
+
+        @include mq("sp") {
+            max-width: 340px;
+            margin: 40px auto 0;
+        }
+
+        &.visible {
+
+            @include animation(
+                $name: fadeUpMin,
+                $duration: 1.5s,
+                $timing-function: ease-in-out,
+            )
+        }
+    }
+
+    &-ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 28px 3.125%;
+        margin-top: 24px;
+
+        @include mq("sp") {
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        &__head {
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+
+    &-list {
+        width: 31.25%;
+        height: 85px;
+        display: grid;
+        place-content: center;
+        background-color: $PureWhite;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: center;
+
+        @include mq("sp") {
+            width: 48.5%;
+            height: 50px;
+            font-size: 12px;
+        }
+
+        &__img {
+            max-width: 100%;
+            height: auto;
+        }
+
+            
+        .team-list__img01 {
+            width: 150px;
+
+            @include mq("sp") {
+                width: 83px;
+            }
+        }
+        
+        .team-list__img02 {
+            width: 86px;
+
+            @include mq("sp") {
+                width: 54px;
+            }
+        }
+            
+        .team-list__img03 {
+            width: 100%;
+        }
+
+        .team-list__img04 {
+            width: 150px;
+
+            @include mq("sp") {
+                width: 90px;
+            }
+        }
+        
+        .team-list__img05 {
+            width: 86px;
+
+            @include mq("sp") {
+                width: 60px;
+            }
+        }
+            
+        .team-list__img06 {
+            width: 107px;
+
+            @include mq("sp") {
+                width: 59px;
+            }
+        }
+        
+        .team-list__img07 {
+            width: 32px;
+
+            @include mq("sp") {
+                width: 21px;
+            }
+        }
+        
+        .team-list__img08 {
+            width: 76px;
+
+            @include mq("sp") {
+                width: 49px;
+            }
+        }
+            
+        .team-list__img09 {
+            width: 264px;
+
+            @include mq("sp") {
+                width: 152px;
+            }
+        }
+        .team-list__img10 {
+            width: 100%;
+        }
+        .team-list__img11 {
+            width: 76px;
+
+            @include mq("sp") {
+                width: 45px;
+            }
+        }
+        .team-list__img12 {
+            width: 210px;
+
+            @include mq("sp") {
+                width: 127px;
+            }
+        }
+        .team-list__img13 {
+            width: 145px;
+
+            @include mq("sp") {
+                width: 85px;
+            }
+        }
+        .team-list__img14 {
+            width: 128px;
+
+            @include mq("sp") {
+                width: 75px;
+            }
+        }
+        .team-list__img15 {
+            width: 156px;
+
+            @include mq("sp") {
+                width: 92px;
+            }
+        }
+        .team-list__img16 {
+            width: 220px;
+
+            @include mq("sp") {
+                width: 129px;
+            }
+        }
+        .team-list__img17 {
+            width: 243px;
+
+            @include mq("sp") {
+                width: 143px;
+            }
+        }
+        .team-list__img18 {
+            width: 202px;
+
+            @include mq("sp") {
+                width: 83px;
+            }
+        }
+        .team-list__img19 {
+            width: 207px;
+
+            @include mq("sp") {
+                width: 120px;
+            }
+        }
+        .team-list__img20 {
+            width: 202px;
+
+            @include mq("sp") {
+                width: 133px;
+            }
+        }
+        .team-list__img21 {
+            width: 282px;
+
+            @include mq("sp") {
+                width: 100%;
+            }
+        }
+        .team-list__img22 {
+            width: 282px;
+
+            @include mq("sp") {
+                width: 100%;
+            }
+        }
+        .team-list__img23 {
+            width: 184px;
+
+            @include mq("sp") {
+                width: 83px;
+            }
+        }
+    }
+}

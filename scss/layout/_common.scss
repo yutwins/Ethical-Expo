@@ -1,3 +1,5 @@
+@use "../foundation/mixin" as *;
+
 $layout-width-inner: 1080px;
 
 // ブレイクポイント
@@ -38,5 +40,20 @@ $breakpoints: (
 }
 
 .section__title {
-    
+    font-size: 100px;
+    opacity: 0;
+
+    @include mq("sp") {
+        font-size: 48px;        
+    }
+
+    &.visible {
+            
+        @include animation(
+            $name: fadeUpMin,
+            $iteration-count: 1,
+            $duration: 2s,
+            $timing-function: ease-in-out,
+        )
+    }
 }

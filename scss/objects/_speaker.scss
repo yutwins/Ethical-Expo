@@ -1,0 +1,306 @@
+@use "../foundation/global" as *;
+
+.speaker {
+    position: relative;
+    overflow: hidden;
+    padding-top: 100px;
+    padding-bottom: 250px;
+
+    @include mq("sp") {
+        padding-top: 80px;
+        padding-bottom: 100px;
+    }
+
+    &__bg {
+
+        &--left,
+        &--right {
+            position: absolute;
+            height: auto;
+            opacity: 0;
+        }
+        &--left {
+            width: 255px;
+            top: -175px;
+            left: 53px;
+
+            @include mq("sp") {
+                width: 112px;
+                top: -93px;
+                left: 0;
+            }
+
+            &.visible {
+
+                @include animation(
+                    $name: fadeInSlideInHorizontal,
+                    $iteration-count: 1,
+                    $duration: 1s,
+                    $delay: .5s,
+                    $timing-function: ease-in-out,
+                )
+            }
+
+        }
+        &--right {
+            width: 200px;
+            right: 2%;
+            top: 130px;
+
+            @include mq("sp") {
+                width: 120px;
+                top: 92%;
+                right: 0;
+            }
+
+            &.visible {
+                
+                @include animation(
+                    $name: fadeInSlideInVertical,
+                    $iteration-count: 1,
+                    $duration: 1s,
+                    $delay: .5s,
+                    $timing-function: ease-in-out,
+                )
+            }
+        }
+    }
+
+    &-floatings {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+
+        &.visible {
+            
+            @include animation(
+                $name: Opacity,
+                $iteration-count: 1,
+                $duration: 3s,
+                $delay: 2.5s,
+                $timing-function: ease-in-out,
+            )
+        }
+    }
+
+    &-floating {
+        position: absolute;
+        height: auto;
+    }
+    &-floating01 {
+        width: 50px;
+        top: 64px;
+        right: 12%;
+
+        @include mq("sp") {
+            width: 80px;
+            top: 0;
+            right: 60%;
+        }
+
+        @include animation(
+            $name: float01,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating02 {
+        width: 20px;
+        top: 160px;
+        left: 15%;
+
+        @include mq("sp") {
+            width: 20px;
+            top: 60px;
+            left: 28%;
+        }
+
+        @include animation(
+            $name: float02,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating03 {
+        width: 28px;
+        top: 220px;
+        right: 20%;
+
+        @include mq("sp") {
+            width: 40px;
+            top: 60px;
+            left: 65%;
+            display: none;
+        }
+
+        @include animation(
+            $name: float03,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating04 {
+        width: 40px;
+        bottom: 35%;
+        left: 8%;
+
+        @include mq("sp") {
+            width: 40px;
+            top: 92%;
+            left: 65%;
+        }
+
+        @include animation(
+            $name: float04,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating05 {
+        width: 70px;
+        bottom: 27%;
+        left: 2%;
+
+        @include mq("sp") {
+            width: 70px;
+            top: 95%;
+            left: 50%;
+            display: none;
+        }
+
+        @include animation(
+            $name: float02,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating06 {
+        width: 60px;
+        bottom: 15%;
+        right: 5%;
+
+        @include mq("sp") {
+            width: 70px;
+            bottom: 3%;
+            left: 55%;
+        }
+
+        @include animation(
+            $name: float02,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating07 {
+        width: 50px;
+        bottom: 8%;
+        right: 2%;
+
+        @include mq("sp") {
+            width: 50px;
+            top: 97%;
+            left: 75%;
+            display: none;
+        }
+
+        @include animation(
+            $name: float03,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+
+   
+    &__title {
+        text-align: center;
+    }
+    
+    &-inner {
+        width: min(100% - 2rem, 1180px);
+        margin-inline: auto;
+    }
+
+    &-ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 60px 3.39%;
+        margin-top: 100px;
+
+        @include mq("sp") {
+            max-width: 340px;
+            margin: 24px auto;
+            justify-content: space-between;
+            gap: 22px 6%;
+        }
+    }
+
+    &-list {
+        width: 22.4%;
+        position: relative;
+
+        @include mq("sp") {
+            width: 47%;
+        }
+
+        &.visible {
+
+            @include animation(
+                $name: fadeUpMin,
+                $duration: 1.5s,
+                $timing-function: ease-in-out,
+            )
+        }
+
+        &__imgArea {
+            width: 100%;
+            height: auto;
+            margin: 0;
+        }
+        &__img {
+            width: 100%;
+            height: auto;
+        }
+
+        &__textArea {
+            position: relative;
+        }
+
+        &__num {
+            width: auto;
+            height: 120px;
+            position: absolute;
+            top: 0;
+            right: 10px;
+        }
+
+        &__name {
+            font-size: 23px;
+            font-weight: bold;
+            position: relative;
+            z-index: 5;
+        }
+
+        &__line {
+            width: 52px;
+            height: 2px;
+            background-color: $PureBlack;
+            margin: 16px 0;
+            position: relative;
+            z-index: 5;
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 1.37;
+            position: relative;
+            z-index: 5;
+        }
+    }
+
+
+
+}
