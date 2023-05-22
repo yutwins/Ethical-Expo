@@ -1,0 +1,226 @@
+@use "../foundation/global" as *;
+
+.contents {
+    position: relative;
+    background-color: $color_gray01;
+    padding-bottom: 200px;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 77.7%;
+        height: calc(100% - 200px);
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: $PureWhite;
+    }
+
+    @include mq("sp") {
+        padding-bottom: 70px;
+
+        &::before {
+            height: calc(100% - 120px);
+        }
+    }
+   
+    &__title {
+        position: absolute;
+        top: -50px;
+        left: 60px;
+        font-size: 100px;
+        line-height: 1;
+
+        @include mq("sp") {
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 48px;
+        }
+    }
+
+    &-inner {
+        position: relative;
+        z-index: 5;
+        padding-top: 120px;
+
+        @include mq("sp") {
+            padding-top: 40px;
+        }
+    }
+
+    &-items {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        padding-bottom: 120px;
+
+        @include mq("sp") {
+            display: block;
+            max-width: 350px;
+            margin: 0 auto;
+            padding-top: 0;
+        }
+    }
+
+    &-item {
+        width: 47.8%;
+        position: relative;
+        opacity: 0;
+
+        @include mq("sp") {
+            width: 100%;
+        }
+
+        &.visible {
+
+            @include animation(
+                $name: fadeUpMin,
+                $duration: 1.5s,
+                $timing-function: ease-in-out,
+            )
+        }
+
+        &:nth-child(2n) {
+            margin-top: 80px;
+
+            @include mq("sp") {
+                margin-top: 0;
+            }
+        }
+        &:nth-child(2n+1) {
+
+            .contents-item__placeArea {
+                padding-left: 40px;
+            }
+            .contents-item__text {
+                padding-left: 40px;
+            }
+            
+            @include mq("sp") {
+                
+                .contents-item__placeArea {
+                    padding-left: 0;
+                }
+                .contents-item__text {
+                    padding-left: 0;
+                }
+            }
+        }
+
+        &:nth-child(1) {
+            padding-top: 360px;
+
+            .contents-item__imgArea {
+                top: -24px;
+                left: 0;
+            }
+
+            @include mq("sp") {
+                padding-top: 240px;
+
+                .contents-item__imgArea {
+                    top: 0;
+                    left: -10px;
+                }
+            }
+        }
+        &:nth-child(2) {
+            padding-top: 425px;
+
+            @include mq("sp") {
+                padding-top: 280px;
+            }
+        }
+        &:nth-child(3) {
+            padding-top: 335px;
+
+            .contents-item__imgArea {
+                top: -100px;
+                left: 0;
+            }
+
+            @include mq("sp") {
+                padding-top: 280px;
+
+                .contents-item__imgArea {
+                    top: 0;
+                    left: 0;
+                }
+            }
+        }
+        &:nth-child(4) {
+            margin-top: 100px;
+            padding-top: 385px;
+
+            .contents-item__imgArea {
+                top: -35px;
+                left: -70px;
+            }
+
+            @include mq("sp") {
+                padding-top: 280px;
+                margin-top: 0;
+
+                .contents-item__imgArea {
+                    top: 20px;
+                    left: -5px;
+                }
+            }
+        }
+
+        &:not(:first-child) {
+
+            @include mq("sp") {
+                margin-top: 20px;
+            }
+        }
+
+        &__imgArea {
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            @include mq("sp") {
+                // position: initial;
+            }
+        }
+
+        &__img {
+            width: 100%;
+            height: auto;
+        }
+
+        &__placeArea {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 30px;
+        }
+        &__placeIcon {
+            width: 22px;
+            height: auto;
+        }
+        &__place {
+            font-size: 25px;
+            font-weight: 900;
+
+            @include mq("sp") {
+                font-size: 20px;
+            }
+        }
+
+        &__text {
+            max-width: 450px;
+            margin-top: 20px;
+            margin-left: 30px;
+            font-weight: 500;
+
+            @include mq("sp") {
+                margin-top: 12px;
+                font-size: 14px;
+            }
+        }
+    }
+}

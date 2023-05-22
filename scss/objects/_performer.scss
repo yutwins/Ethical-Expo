@@ -1,0 +1,309 @@
+@use "../foundation/global" as *;
+
+.performer {
+    position: relative;
+    overflow: hidden;
+    padding-top: 200px;
+    background-color: $PureWhite;
+
+    @include mq("sp") {
+        padding-top: 100px;
+    }
+
+    &-floatings {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+
+        &.visible {
+            
+            @include animation(
+                $name: Opacity,
+                $iteration-count: 1,
+                $duration: 3s,
+                $delay: 2.5s,
+                $timing-function: ease-in-out,
+            )
+        }
+    }
+
+    &-floating {
+        position: absolute;
+        height: auto;
+    }
+    &-floating01 {
+        width: 30px;
+        top: 64px;
+        right: 15%;
+
+        @include mq("sp") {
+            width: 20px;
+            top: 20px;
+            right: 40%;
+        }
+
+        @include animation(
+            $name: float01,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating02 {
+        width: 40px;
+        top: 140px;
+        right: 10%;
+
+        @include mq("sp") {
+            width: 70px;
+            top: 30px;
+            left: 5%;
+        }
+
+        @include animation(
+            $name: float02,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating03 {
+        width: 100px;
+        top: 160px;
+        left: 5%;
+
+        @include mq("sp") {
+            width: 40px;
+            top: 60px;
+            left: 65%;
+        }
+
+        @include animation(
+            $name: float03,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating04 {
+        width: 20px;
+        top: 270px;
+        left: 15%;
+
+        @include mq("sp") {
+            width: 20px;
+            top: 65px;
+            left: 25%;
+        }
+
+        @include animation(
+            $name: float04,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating05 {
+        width: 70px;
+        top: 50%;
+        left: 0;
+
+        @include mq("sp") {
+            width: 70px;
+            top: 95%;
+            left: 50%;
+        }
+
+        @include animation(
+            $name: float04,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating06 {
+        width: 60px;
+        top: 51%;
+        right: 2%;
+
+        @include mq("sp") {
+            width: 50px;
+            top: 96%;
+            left: 90%;
+        }
+
+        @include animation(
+            $name: float02,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating07 {
+        width: 50px;
+        top: 60%;
+        right: 5%;
+
+        @include mq("sp") {
+            width: 50px;
+            top: 97%;
+            left: 75%;
+        }
+
+        @include animation(
+            $name: float03,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+
+    &__bg {
+
+        &--left,
+        &--right {
+            position: absolute;
+            height: auto;
+            opacity: 0;
+        }
+        &--left {
+            width: 255px;
+            top: 295px;
+            left: 0;
+
+            @include mq("sp") {
+                display: none;
+            }
+
+            &.visible {
+
+                @include animation(
+                    $name: fadeInSlideInHorizontal,
+                    $iteration-count: 1,
+                    $duration: 1s,
+                    $delay: .5s,
+                    $timing-function: ease-in-out,
+                )
+            }
+
+        }
+        &--right {
+            width: 175px;
+            right: 2%;
+            top: -240px;
+
+            @include mq("sp") {
+                width: 120px;
+                top: -188px;
+            }
+
+            &.visible {
+                
+                @include animation(
+                    $name: fadeInSlideInVertical,
+                    $iteration-count: 1,
+                    $duration: 1s,
+                    $delay: .5s,
+                    $timing-function: ease-in-out,
+                )
+            }
+        }
+    }
+    &__title {
+        font-size: 100px;
+        font-weight: 900;
+        text-align: center;
+
+        @include mq("sp") {
+            font-size: 48px;
+        }
+    }
+    &__subTitle {
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+
+        @include mq("sp") {
+            font-size: 16px;
+        }
+    }
+
+    &-inner {
+        position: relative;
+        z-index: 5;
+        padding-bottom: 155px;
+
+        @include mq("sp") {
+            padding-bottom: 80px;
+        }
+    }
+
+    &-ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px 7.6%;
+        margin-top: 90px;
+        
+        @include mq("sp") {
+            margin-top: 32px;
+            gap: 18px 8%;
+        }
+    }
+
+    &-list {
+        width: 19%;
+        text-align: center;
+        opacity: 0;
+
+        @include mq("sp") {
+            width: 46%;
+        }
+
+        &.visible {
+
+            @include animation(
+                $name: fadeUpMin,
+                $duration: 1.5s,
+                $timing-function: ease-in-out,
+            )
+        }
+
+        &__img {
+            width: 100%;
+            height: auto;
+        }
+
+        &__name {
+            font-size: 22px;
+            font-weight: bold;
+
+            @include mq("sp") {
+                font-size: 16px;
+            }
+        }
+
+        &__business {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 500;
+            
+            &.artist {
+                color: #0000FF;
+                background: -webkit-linear-gradient(0deg, #0000FF, #8787FF);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            &.influencer {
+                color: #FF0000;
+                background: -webkit-linear-gradient(0deg, #FF0000, #FF7979);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+            }
+
+            @include mq("sp") {
+                padding: 2px 5px;
+                font-size: 10px;
+            }
+        }
+    }
+}

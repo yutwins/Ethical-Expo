@@ -1,3 +1,5 @@
+@use "../foundation/mixin" as *;
+
 $layout-width-inner: 1080px;
 
 // ブレイクポイント
@@ -14,10 +16,44 @@ $breakpoints: (
 }
 
 .inner {
-    width: min(100% - 2rem, 1200px);
+    width: min(100% - 2rem, 1140px);
     margin-inline: auto;
     
     // width: 1200px;
     // max-width: 100%;
     // margin: 0 auto;
+}
+
+.pc-only {
+    display: block;
+
+    @include mq("sp") {
+        display: none;
+    }
+}
+.sp-only {
+    display: none;
+
+    @include mq("sp") {
+        display: block;
+    }
+}
+
+.section__title {
+    font-size: 100px;
+    opacity: 0;
+
+    @include mq("sp") {
+        font-size: 48px;        
+    }
+
+    &.visible {
+            
+        @include animation(
+            $name: fadeUpMin,
+            $iteration-count: 1,
+            $duration: 2s,
+            $timing-function: ease-in-out,
+        )
+    }
 }
