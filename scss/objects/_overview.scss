@@ -2,12 +2,18 @@
 
  .overview {
     background-color: $PureBlack;
+    padding-bottom: 100px;
+
+    @include mq("sp") {
+        padding-bottom: 20px;
+    }
 
     &-inner {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        padding: 200px 0;
+        padding-top: 200px;
+        padding-bottom: 90px;
         opacity: 0;
 
         &.visible {
@@ -22,8 +28,9 @@
         @include mq("sp") {
             display: block;
             max-width: 340px;
-            margin: 0 auto; 
-            padding: 100px 0;
+            margin: 0 auto;
+            padding-top: 100px;
+            padding-bottom: 60px;
         }
     }
 
@@ -104,6 +111,18 @@
 
         @include mq("sp") {
             width: 100%;
+        }
+    }
+
+    .copyright {
+        text-align: right;
+        font-family: $Reross;
+        color: $color_gray08;
+        font-size: 12px;
+
+        @include mq("sp") {
+            text-align: center;
+            font-size: 10px;
         }
     }
  }

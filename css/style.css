@@ -350,7 +350,7 @@
 .section__title {
   font-size: 100px;
   opacity: 0;
-  font-family: "Reross", sans-serif;
+  font-family: "reross-rectangular", sans-serif;
 }
 @media (max-width: 767px) {
   .section__title {
@@ -593,6 +593,7 @@ p {
     width: 60px;
     top: 150px;
     left: 70%;
+    display: none;
   }
 }
 .hero-floating03 {
@@ -616,9 +617,9 @@ p {
 }
 @media (max-width: 767px) {
   .hero-floating03 {
-    width: 25px;
-    top: 180px;
-    left: 30%;
+    width: 15px;
+    top: 200px;
+    left: 80%;
   }
 }
 .hero-floating04 {
@@ -716,6 +717,7 @@ p {
     width: 50px;
     bottom: 350px;
     left: 12%;
+    display: none;
   }
 }
 .hero-floating08 {
@@ -740,8 +742,8 @@ p {
 @media (max-width: 767px) {
   .hero-floating08 {
     width: 50px;
-    bottom: 80px;
-    left: 12%;
+    bottom: 140px;
+    left: 92%;
   }
 }
 .hero-floating09 {
@@ -768,6 +770,7 @@ p {
     width: 50px;
     bottom: 150px;
     right: 12%;
+    display: none;
   }
 }
 .hero-floating10 {
@@ -819,6 +822,7 @@ p {
 @media (max-width: 767px) {
   .hero-floating11 {
     width: 50px;
+    display: none;
   }
 }
 .hero-floating12 {
@@ -843,6 +847,7 @@ p {
 @media (max-width: 767px) {
   .hero-floating12 {
     width: 70px;
+    display: none;
   }
 }
 .hero-floating13 {
@@ -892,6 +897,7 @@ p {
 @media (max-width: 767px) {
   .hero-floating14 {
     width: 70px;
+    display: none;
   }
 }
 .hero-inner {
@@ -913,7 +919,7 @@ p {
   }
 }
 .hero-slideTitleArea--horizontal {
-  height: 76px;
+  height: 80px;
 }
 .hero-slideTitleArea--vertical {
   height: 470px;
@@ -923,7 +929,7 @@ p {
 .hero-slideTitleArea--horizontalSp01, .hero-slideTitleArea--horizontalSp02, .hero-slideTitleArea--horizontalSp03 {
   position: relative;
   overflow: hidden;
-  height: 33px;
+  height: 36px;
   display: none;
 }
 @media (max-width: 767px) {
@@ -947,6 +953,7 @@ p {
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
   padding-left: 15px;
+  padding-bottom: 4px;
   -webkit-animation-name: horizontal;
           animation-name: horizontal;
   -webkit-animation-duration: 1.5s;
@@ -991,6 +998,7 @@ p {
   background-color: #161616;
   color: #fff;
   font-size: 34px;
+  padding-bottom: 2px;
   line-height: 1;
   position: absolute;
   top: 0;
@@ -1049,7 +1057,7 @@ p {
 .hero__title {
   font-size: 156px;
   line-height: 1;
-  font-family: "Reross", sans-serif;
+  font-family: "reross-rectangular", sans-serif;
   -webkit-animation-name: fadeUpHeroTitle;
           animation-name: fadeUpHeroTitle;
   -webkit-animation-duration: 2.5s;
@@ -1107,6 +1115,7 @@ p {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
+  gap: 20px;
   -webkit-animation-name: fadeUp;
           animation-name: fadeUp;
   -webkit-animation-duration: 2s;
@@ -1147,7 +1156,7 @@ p {
 }
 @media (max-width: 767px) {
   .hero-place__text {
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 .hero-dateArea {
@@ -1187,6 +1196,23 @@ p {
 }
 .countdown-inner {
   padding: 120px 0;
+  opacity: 0;
+}
+.countdown-inner.visible {
+  -webkit-animation-name: fadeUpMin;
+          animation-name: fadeUpMin;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 @media (max-width: 767px) {
   .countdown-inner {
@@ -1210,7 +1236,7 @@ p {
 .countdown-timeNum {
   position: relative;
   display: inline-block;
-  font-family: "Reross", sans-serif;
+  font-family: "reross-rectangular", sans-serif;
   font-size: 180px;
   line-height: 1;
   font-weight: auto;
@@ -1272,7 +1298,7 @@ p {
   line-height: 1;
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
-  font-family: "Reross", sans-serif;
+  font-family: "reross-rectangular", sans-serif;
 }
 @media (max-width: 767px) {
   .countdown-timeUnit {
@@ -1484,7 +1510,8 @@ p {
   }
 }
 .concept-inner {
-  padding: 330px 0;
+  padding-top: 330px;
+  padding-bottom: 400px;
   max-width: 700px;
   margin: 0 auto;
   position: relative;
@@ -1760,7 +1787,7 @@ p {
   padding-top: 360px;
 }
 .contents-item:nth-child(1) .contents-item__imgArea {
-  top: -24px;
+  top: -5px;
   left: 0;
 }
 @media (max-width: 767px) {
@@ -2061,7 +2088,7 @@ p {
 .schedule-container {
   width: 100%;
   max-width: 900px;
-  margin: 80px auto 0;
+  margin: 0 auto;
 }
 @media (max-width: 767px) {
   .schedule-container {
@@ -2358,7 +2385,7 @@ p {
       -ms-flex-align: center;
           align-items: center;
   gap: 6px;
-  font-family: "Reross", sans-serif;
+  font-family: "reross-rectangular", sans-serif;
 }
 .schedule-mainStage__itemIcon, .schedule-subStage__itemIcon {
   width: 12px;
@@ -2912,7 +2939,7 @@ p {
 }
 .performer__subTitle {
   margin-top: 10px;
-  font-family: "Reross", sans-serif;
+  font-family: "reross-rectangular", sans-serif;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
@@ -4091,6 +4118,12 @@ p {
 
 .overview {
   background-color: #000;
+  padding-bottom: 100px;
+}
+@media (max-width: 767px) {
+  .overview {
+    padding-bottom: 20px;
+  }
 }
 .overview-inner {
   display: -webkit-box;
@@ -4105,7 +4138,8 @@ p {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 200px 0;
+  padding-top: 200px;
+  padding-bottom: 90px;
   opacity: 0;
 }
 .overview-inner.visible {
@@ -4129,7 +4163,8 @@ p {
     display: block;
     max-width: 340px;
     margin: 0 auto;
-    padding: 100px 0;
+    padding-top: 100px;
+    padding-bottom: 60px;
   }
 }
 .overview__title {
@@ -4215,6 +4250,18 @@ p {
 @media (max-width: 767px) {
   .overview__dd {
     width: 100%;
+  }
+}
+.overview .copyright {
+  text-align: right;
+  font-family: "reross-rectangular", sans-serif;
+  color: #939393;
+  font-size: 12px;
+}
+@media (max-width: 767px) {
+  .overview .copyright {
+    text-align: center;
+    font-size: 10px;
   }
 }
 

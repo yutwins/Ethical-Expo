@@ -29,6 +29,7 @@ function addVisibilityClass(selector, isChild=false) {
 
 window.addEventListener('scroll', () => {
     addVisibilityClass('.section__title');
+    addVisibilityClass('.countdown-inner');
     addVisibilityClass('.concept__head');
     addVisibilityClass('.concept__msg', true);
     addVisibilityClass('.concept-floatings');
