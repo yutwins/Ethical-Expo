@@ -28,13 +28,14 @@
     &-timeNum {
         position: relative;
         display: inline-block;
-        font-size: 100px;
+        font-family: $Reross;
+        font-size: 180px;
         line-height: 1;
-        font-weight: bold;
+        font-weight: auto;
         color: $PureWhite;
 
         @include mq("sp") {
-            font-size: 70px;
+            font-size: 74px;
         }
 
         &::before,
@@ -42,7 +43,7 @@
             content: "";
             display: block;
             width: 2px;
-            height: 100%;
+            height: 90%;
             position: absolute;
             top: 0;
             background-color: $PureWhite;
@@ -87,11 +88,14 @@
     }
     &-timeUnit {
         display: block;
-        font-size: 24px;
+        font-size: 40px;
         line-height: 1;
-
+        transform: translateY(-20px);
+        font-family: $Reross;
+        
         @include mq("sp") {
             font-size: 16px;
+            transform: translateY(-10px);
         }
     }
 

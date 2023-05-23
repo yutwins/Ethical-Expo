@@ -1,0 +1,686 @@
+@use "../foundation/global" as *;
+
+.schedule {
+    position: relative;
+    background-color: $PureBlack;
+
+    &-floatings {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+
+        &.visible {
+            
+            @include animation(
+                $name: Opacity,
+                $iteration-count: 1,
+                $duration: 3s,
+                $delay: 2.5s,
+                $timing-function: ease-in-out,
+            )
+        }
+    }
+
+    &-floating {
+        position: absolute;
+        height: auto;
+    }
+    &-floating01 {
+        width: 80px;
+        top: 20%;
+        left: 5%;
+
+        @include mq("sp") {
+            width: 60px;
+            top: 0;
+            left: 10%;
+        }
+
+        @include animation(
+            $name: float01,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating02 {
+        width: 80px;
+        top: 21%;
+        right: 0;
+
+        @include mq("sp") {
+            width: 60px;
+            top: 32px;
+            right: 8%;
+        }
+
+        @include animation(
+            $name: float02,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating03 {
+        width: 100px;
+        top: 30%;
+        left: 0;
+
+        @include mq("sp") {
+            width: 90px;
+            top: 40px;
+            left: -5%;
+        }
+
+        @include animation(
+            $name: float03,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating04 {
+        width: 50px;
+        top: 32%;
+        right: 5%;
+
+        @include mq("sp") {
+            width: 50px;
+            top: 12%;
+            right: 5%;
+        }
+
+        @include animation(
+            $name: float04,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+    &-floating05 {
+        width: 24px;
+        top: 50%;
+        left: 10%;
+
+        @include mq("sp") {
+            width: 15px;
+            top: 12%;
+            left: 5%;
+        }
+
+        @include animation(
+            $name: float02,
+            $iteration-count: infinite,
+            $duration: 2s,
+        )
+    }
+
+    &-inner {
+        position: relative;
+        z-index: 5;
+        padding: 200px 0;
+        opacity: 0;
+
+        &.visible {
+
+            @include animation(
+                $name: fadeUpMin,
+                $duration: 1.5s,
+                $timing-function: ease-in-out,
+            )
+        }
+
+        @include mq("sp") {
+            padding: 100px 0;
+        }
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &-container {
+        width: 100%;
+        max-width: 900px;
+        margin: 80px auto 0;
+        
+        @include mq("sp") {
+            max-width: 340px;
+            margin: 36px auto 0;
+        }
+    }
+
+    &-btns {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    &-tab__button {
+        width: 50%;
+        color: $color_gray03;
+        font-size: 36px;
+        font-weight: bold;
+        position: relative;
+
+        @include mq("sp") {
+            font-size: 18px;
+        }
+
+
+        &.active-button {
+            color: $PureWhite;
+         
+            .schedule-tab__buttonLine {
+                background-color: $PureWhite;
+            }
+        }
+    }
+    &-tab__buttonLine {
+        width: 100%;
+        height: 4px;
+        display: block;
+        margin-top: 14px;
+        background-color: rgba($color_gray04, 0.5);
+    }
+
+    &-tab__bg--sp {
+        display: none;
+
+        @include mq("sp") {
+            display: block;
+            width: 291px;
+            height: auto;
+            margin-top: 24px;
+        }
+    }
+
+    &-tabs {
+        width: 100%;
+        height: 940px;
+        margin-top: 60px;
+        position: relative;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url(../../images/EE-schedule-bg.png) no-repeat center center / contain;
+        }
+
+        @include mq("sp") {
+            height: auto;
+            margin-top: 24px;
+            
+            &::before {
+                display: none;
+            }
+        }
+    }
+
+    &-tabContent {
+        display: none;
+        position: relative;
+        z-index: 5;
+
+        &.active {
+            display: flex;
+            align-items: flex-start;
+            gap: 22px;
+            max-width: 800px;
+            margin-left: auto;
+            padding-top: 50px;
+
+            @include mq("sp") {
+                gap: 10px;
+                padding-top: 0;
+            }
+        }
+    }
+
+    &-modal {
+        display: none; /* Hidden by default */
+        position: fixed; 
+        z-index: 100;
+        left: 0;
+        top: 0;
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+        // height: 100vh;
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(0,0,0,0.4);
+        backdrop-filter: blur(10px);
+
+        @include mq("sp") {
+            
+        }
+
+        &__content {
+            width: 64.2%;
+            min-height: 400px;
+            height: auto;
+            position: relative;
+            // position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $color_black03;
+            padding: 60px 100px;
+            border: 1px solid #888;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            color: $PureWhite;
+            border-radius: 29px;
+
+            @include mq("sp") {
+                width: 90%;
+                max-width: 340px;
+                min-height: 310px;
+                padding: 40px 30px;
+            }
+
+            @include animation(
+                $name: animatetop,
+                $duration: 0.4s,
+            );
+
+            .close {
+                position: absolute;
+                bottom: -50px;
+                left: 50%;
+                transform: translateX(-50%);
+                cursor: pointer;
+            }
+        }
+
+        &__head {
+            font-size: 28px;
+            text-align: center;
+
+            @include mq("sp") {
+                font-size: 22px;
+            }
+        }
+
+        &__ul {
+            max-width: 720px;
+            margin: 50px auto 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px 8.5%;
+
+            @include mq("sp") {
+                width: 100%;
+                max-width: 340px;
+                gap: 18px 5%;
+                margin: 32px auto 0;
+            }
+        }
+
+        &__list {
+            width: 19%;
+            width: 130px;
+            text-align: center;
+            // opacity: 0;
+
+    
+            @include mq("sp") {
+                width: 46%;
+            }
+    
+            &.visible {
+    
+                @include animation(
+                    $name: fadeUpMin,
+                    $duration: 1.5s,
+                    $timing-function: ease-in-out,
+                )
+            }
+        }
+    
+        &__listImg {
+            width: 100%;
+            height: auto;
+        }
+    
+        &__listName {
+            font-size: 18px;
+            font-weight: 500;
+
+            @include mq("sp") {
+                font-size: 16px;
+            }
+        }
+    
+        &__listBusiness {
+            display: inline-block;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1;
+            font-weight: 500;
+            border: 1px solid $color_gray01;
+            overflow: hidden;
+            position: relative;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: #F9F9F9;
+                z-index: -1;
+            }
+            
+            &.artist {
+                color: #0000FF;
+                background: -webkit-linear-gradient(0deg, #0000FF, #8787FF);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            &.influencer {
+                color: #FF0000;
+                background: -webkit-linear-gradient(0deg, #FF0000, #FF7979);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+            }
+
+            @include mq("sp") {
+                padding: 2px 5px;
+                font-size: 10px;
+            }
+        }
+    }
+    
+
+    &-mainStage,
+    &-subStage {
+        width: 48.75%;
+
+        @include mq("sp") {
+            width: 48.5%;
+        }
+
+        &__item {
+            width: 100%;
+            color: $PureWhite;
+            border: 1px solid rgba($PureWhite, .25);
+            border-radius: 5px;
+        }
+
+        &__itemHeadArea {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: $Reross;
+        }
+
+        &__itemIcon {
+            width: 12px;
+            height: auto;
+            box-shadow: 2px 4px 8px rgba($PureBlack, .3);
+            padding-bottom: 3px;
+        }
+
+        &__itemTime {
+            color: $PureWhite;
+            font-size: 18px;
+            font-weight: normal;
+
+            @include mq("sp") {
+                font-size: 14px;;
+            }
+        }
+
+        &__itemMin {
+            font-weight: 500;
+
+            @include mq("sp") {
+                font-size: 11px;
+            }
+
+            &.yellow {
+                color: #FFC700;
+                background: -webkit-linear-gradient(-90deg, #FFC700, #FFEF99);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            
+            &.green {
+                color: #00FF00;
+                background: -webkit-linear-gradient(180deg, #00FF00, #C5FFC5);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+
+    &-mainStage {
+        padding-top: 250px;
+
+        @include mq("sp") {
+            padding-top: 216px;
+        }
+
+        &__item {
+            padding: 22px 30px;
+            background-color: $color_gray06;
+
+            @include mq("sp") {
+                padding: 36px 10px;
+            }
+
+            &:nth-child(2) {
+                margin-top: 92px;
+            }
+        }
+
+        &__itemTitle {
+            margin-top: 10px;
+            padding-left: 12px;
+            font-size: 18px;
+            position: relative;
+
+            @include mq("sp") {
+                font-size: 14px;
+            }
+
+            &::before {
+                content: "";
+                display: block;
+                width: 2px;
+                height: 22px;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+                background-color: $PureWhite;
+            }
+        }
+
+        &__itemModalBtns {
+            margin-top: 16px;
+        }
+        &__itemModalBtn {
+
+            &--upper,
+            &--bottom {
+                width: 100%;
+                max-width: 330px;
+                height: 47px;
+                display: grid;
+                place-items: center;
+                border: 1px solid $PureWhite;
+                border-radius: 64px;
+                color: $PureWhite;
+                position: relative;
+                cursor: pointer;
+
+                &:hover {
+                    opacity: .8;
+                }
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                    position: absolute;
+                    top: 50%;
+                    right: 5%;
+                    transform: translateY(-50%);
+                    background: url(../../images/EE-plus-white.png) no-repeat center center / contain;
+                }
+
+                @include mq("sp") {
+                    max-width: 145px;
+                    height: 32px;
+                }
+            }
+
+            &--bottom {
+                margin-top: 12px;
+            }
+        }
+
+        &__itemModalBtnText {
+            font-size: 14px;
+            font-weight: bold;
+
+            @include mq("sp") {
+                font-size: 10px;
+            }
+        }
+    }
+
+    &-subStage {
+        padding-top: 36px;
+
+        @include mq("sp") {
+            padding-top: 0;
+        }
+
+        &__item {
+            padding: 12px 20px;
+            background-color: $color_black02;
+
+            @include mq("sp") {
+                padding: 10px;
+                margin-top: 10px;
+            }
+
+            &:nth-child(2) {
+                margin-top: 46px;
+
+                @include mq("sp") {
+                    margin-top: 10px;
+                }
+            }
+            &:nth-child(3) {
+                margin-top: 20px;
+                @include mq("sp") {
+                    margin-top: 10px;
+                }
+            }
+            &:nth-child(4) {
+                margin-top: 42px;
+                @include mq("sp") {
+                    margin-top: 10px;
+                }
+            }
+            &:nth-child(5) {
+                margin-top: 38px;
+                @include mq("sp") {
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        &__itemTitle {
+            margin-top: 4px;
+            padding-left: 12px;
+            font-size: 18px;
+            position: relative;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 2px;
+                height: 22px;
+                position: absolute;
+                top: 5px;
+                left: 0;
+                background-color: $PureWhite;
+            }
+
+            @include mq("sp") {
+                font-size: 14px;
+
+                &::before {
+                    top: 0;
+                    transform: initial;
+                }
+            }
+        }
+
+        &__itemTheme {
+            display: flex;
+            align-items: flex-start;
+            gap: 6px;
+            margin-top: 12px;
+
+            @include mq("sp") {
+                display: block;
+            }
+        }
+        &__tag {
+            width: 70px;
+            height: 20px;
+            padding: 4px 6px;
+            border-radius: 6px;
+            border: 1px solid rgba($PureWhite, .25);
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+        }
+        &__text {
+            width: 78%;
+            font-weight: 500;
+            line-height: 1.2;
+
+            @include mq("sp") {
+                width: 100%;
+                margin-top: 4px;
+                font-size: 12px;
+            }
+        }
+    }
+
+}
+
+.myModals {
+
+    #myModal0 {
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    #myModal0,
+    #myModal2,
+    #myModal4,
+    #myModal6 {
+
+        .schedule-modal__ul {
+            justify-content: center;
+        }
+    }
+}

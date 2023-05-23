@@ -1,9 +1,9 @@
 @use "../foundation/global" as *;
 
 .contents {
-    position: relative;
     background-color: $color_gray01;
     padding-bottom: 200px;
+    position: relative;
 
     &::before {
         content: "";
@@ -30,10 +30,10 @@
         left: 60px;
         font-size: 100px;
         line-height: 1;
-
+        
         @include mq("sp") {
             top: -24px;
-            left: 50%;
+            left: 15%;
             transform: translateX(-50%);
             font-size: 48px;
         }

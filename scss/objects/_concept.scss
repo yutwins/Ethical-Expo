@@ -154,13 +154,16 @@
 
         @include mq("sp") {
             padding: 115px 0;
-
         }
 
     }
 
     &-msgArea {
 
+        @include mq("sp") {
+            max-width: 340px;
+            margin: 0 auto;
+        }
     }
 
     &__msg {
@@ -225,7 +228,8 @@
         overflow: hidden;
 
         @include mq("sp") {
-            margin-top: 40px;
+            max-width: 340px;
+            margin: 40px auto 0;
         }
     }
     &__head {

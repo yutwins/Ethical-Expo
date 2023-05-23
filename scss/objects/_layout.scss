@@ -93,6 +93,17 @@
         position: relative;
         z-index: 5;
         padding-top: 40px;
+        opacity: 0;
+
+        &.visible {
+            
+            @include animation(
+                $name: fadeUpMin,
+                $iteration-count: 1,
+                $duration: 2s,
+                $timing-function: ease-in-out,
+            )
+        }
         
         @include mq("sp") {
             padding-top: 10px;
@@ -127,6 +138,12 @@
         background-color: $color_black01;
         border-radius: 64px;
         box-shadow: 10px 20px 40px rgba($PureBlack, .30);
+        transition: all 0.3s ease 0s;
+
+        &:hover {
+            box-shadow: none;
+            transform: translateY(3px);
+        }
 
         @include mq("sp") {
             width: 284px;

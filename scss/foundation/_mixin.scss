@@ -147,3 +147,10 @@
         opacity: 1;
     }
 }
+
+
+/* Add Animation */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0} 
+  to {top: 50%; opacity: 1}
+}

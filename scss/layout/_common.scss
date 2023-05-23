@@ -1,4 +1,5 @@
 @use "../foundation/mixin" as *;
+@use "../foundation/variables" as *;
 
 $layout-width-inner: 1080px;
 
@@ -42,6 +43,7 @@ $breakpoints: (
 .section__title {
     font-size: 100px;
     opacity: 0;
+    font-family: $Reross;
 
     @include mq("sp") {
         font-size: 48px;        
