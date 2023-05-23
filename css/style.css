@@ -1196,6 +1196,23 @@ p {
 }
 .countdown-inner {
   padding: 120px 0;
+  opacity: 0;
+}
+.countdown-inner.visible {
+  -webkit-animation-name: fadeUpMin;
+          animation-name: fadeUpMin;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 @media (max-width: 767px) {
   .countdown-inner {

@@ -5,6 +5,16 @@
     
     &-inner {
         padding: 120px 0;
+        opacity: 0;
+
+        &.visible {
+
+            @include animation(
+                $name: fadeUpMin,
+                $duration: 1.5s,
+                $timing-function: ease-in-out,
+            )
+        }
 
         @include mq("sp") {
             padding: 60px 0;
