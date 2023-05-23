@@ -73,7 +73,7 @@ function countdown() {
   }
 
   countdown();
-  setInterval(countdown, 1000);
+  setInterval(countdown, 60000);
 
 
 
@@ -111,6 +111,7 @@ function countdown() {
 });
 
 
+// モーダルウィンドウ
 document.addEventListener("DOMContentLoaded", function() {
   const modalBtns = document.getElementsByClassName("schedule-mainStage__itemModalBtn");
   const modals = document.getElementsByClassName("schedule-modal");

@@ -1,6 +1,4 @@
 <TODO>
-・フォント「Reross」をAdobeからダウンロードの上使用する
-・JavaScriptの変数名や関数名をわかりやすくする！
 ・HTMLのコード修正（Markuplintを用いて）
     ・imgタグにはwidthとheightを指定する
 ・「ノイズ背景」が入っていることを忘れずに実装する

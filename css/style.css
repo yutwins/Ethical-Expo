@@ -1210,21 +1210,22 @@ p {
 .countdown-timeNum {
   position: relative;
   display: inline-block;
-  font-size: 100px;
+  font-family: "Reross", sans-serif;
+  font-size: 180px;
   line-height: 1;
-  font-weight: bold;
+  font-weight: auto;
   color: #fff;
 }
 @media (max-width: 767px) {
   .countdown-timeNum {
-    font-size: 70px;
+    font-size: 74px;
   }
 }
 .countdown-timeNum::before, .countdown-timeNum::after {
   content: "";
   display: block;
   width: 2px;
-  height: 100%;
+  height: 90%;
   position: absolute;
   top: 0;
   background-color: #fff;
@@ -1267,12 +1268,17 @@ p {
 }
 .countdown-timeUnit {
   display: block;
-  font-size: 24px;
+  font-size: 40px;
   line-height: 1;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  font-family: "Reross", sans-serif;
 }
 @media (max-width: 767px) {
   .countdown-timeUnit {
     font-size: 16px;
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
 }
 .countdown-done {
@@ -1489,6 +1495,12 @@ p {
     padding: 115px 0;
   }
 }
+@media (max-width: 767px) {
+  .concept-msgArea {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}
 .concept__msg {
   font-size: 25px;
   font-weight: bold;
@@ -1564,7 +1576,8 @@ p {
 }
 @media (max-width: 767px) {
   .concept-headArea {
-    margin-top: 40px;
+    max-width: 340px;
+    margin: 40px auto 0;
   }
 }
 .concept__head {
@@ -2171,7 +2184,6 @@ p {
   min-height: 400px;
   height: auto;
   position: relative;
-  position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -2212,6 +2224,7 @@ p {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  cursor: pointer;
 }
 .schedule-modal__head {
   font-size: 28px;
@@ -2229,10 +2242,6 @@ p {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
@@ -2250,9 +2259,6 @@ p {
   width: 19%;
   width: 130px;
   text-align: center;
-}
-.schedule-modal__list:first-child {
-  margin: 0 auto;
 }
 @media (max-width: 767px) {
   .schedule-modal__list {
@@ -2352,15 +2358,19 @@ p {
       -ms-flex-align: center;
           align-items: center;
   gap: 6px;
+  font-family: "Reross", sans-serif;
 }
 .schedule-mainStage__itemIcon, .schedule-subStage__itemIcon {
   width: 12px;
   height: auto;
+  -webkit-box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  padding-bottom: 3px;
 }
 .schedule-mainStage__itemTime, .schedule-subStage__itemTime {
   color: #fff;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: normal;
 }
 @media (max-width: 767px) {
   .schedule-mainStage__itemTime, .schedule-subStage__itemTime {
@@ -2594,6 +2604,21 @@ p {
     margin-top: 4px;
     font-size: 12px;
   }
+}
+
+.myModals #myModal0 {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.myModals #myModal0 .schedule-modal__ul,
+.myModals #myModal2 .schedule-modal__ul,
+.myModals #myModal4 .schedule-modal__ul,
+.myModals #myModal6 .schedule-modal__ul {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .performer {
@@ -2887,9 +2912,27 @@ p {
 }
 .performer__subTitle {
   margin-top: 10px;
+  font-family: "Reross", sans-serif;
   font-size: 20px;
   font-weight: bold;
   text-align: center;
+  opacity: 0;
+}
+.performer__subTitle.visible {
+  -webkit-animation-name: fadeUpMin;
+          animation-name: fadeUpMin;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 @media (max-width: 767px) {
   .performer__subTitle {
@@ -2919,7 +2962,8 @@ p {
 }
 @media (max-width: 767px) {
   .performer-ul {
-    margin-top: 32px;
+    max-width: 340px;
+    margin: 32px auto 0;
     gap: 18px 8%;
   }
 }
@@ -3170,7 +3214,7 @@ p {
 }
 .speaker-floating04 {
   width: 40px;
-  bottom: 35%;
+  bottom: 13%;
   left: 8%;
   -webkit-animation-name: float04;
           animation-name: float04;
@@ -3196,7 +3240,7 @@ p {
 }
 .speaker-floating05 {
   width: 70px;
-  bottom: 27%;
+  bottom: 5%;
   left: 2%;
   -webkit-animation-name: float02;
           animation-name: float02;
@@ -3223,7 +3267,7 @@ p {
 }
 .speaker-floating06 {
   width: 60px;
-  bottom: 15%;
+  bottom: 10%;
   right: 5%;
   -webkit-animation-name: float02;
           animation-name: float02;
@@ -3249,7 +3293,7 @@ p {
 }
 .speaker-floating07 {
   width: 50px;
-  bottom: 8%;
+  bottom: 7%;
   right: 2%;
   -webkit-animation-name: float03;
           animation-name: float03;
@@ -3487,6 +3531,23 @@ p {
   position: relative;
   z-index: 5;
   padding-top: 40px;
+  opacity: 0;
+}
+.layout-inner.visible {
+  -webkit-animation-name: fadeUpMin;
+          animation-name: fadeUpMin;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
 }
 @media (max-width: 767px) {
   .layout-inner {

@@ -93,6 +93,17 @@
         position: relative;
         z-index: 5;
         padding-top: 40px;
+        opacity: 0;
+
+        &.visible {
+            
+            @include animation(
+                $name: fadeUpMin,
+                $iteration-count: 1,
+                $duration: 2s,
+                $timing-function: ease-in-out,
+            )
+        }
         
         @include mq("sp") {
             padding-top: 10px;

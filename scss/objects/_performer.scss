@@ -216,9 +216,21 @@
     }
     &__subTitle {
         margin-top: 10px;
+        font-family: $Reross;
         font-size: 20px;
         font-weight: bold;
         text-align: center;
+        opacity: 0;
+
+        &.visible {
+            
+            @include animation(
+                $name: fadeUpMin,
+                $iteration-count: 1,
+                $duration: 2s,
+                $timing-function: ease-in-out,
+            )
+        }
 
         @include mq("sp") {
             font-size: 16px;
@@ -242,7 +254,8 @@
         margin-top: 90px;
         
         @include mq("sp") {
-            margin-top: 32px;
+            max-width: 340px;
+            margin: 32px auto 0;
             gap: 18px 8%;
         }
     }
