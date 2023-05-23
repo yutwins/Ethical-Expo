@@ -68,7 +68,8 @@ function countdown() {
       <p class="countdown-timeNum">${minutes}<span class="countdown-timeUnit">MINUTE</span></p>
       `;
     } else {
-      document.getElementById("countdown-container").innerHTML = '<p class="countdown-done">イベントはすでに開催されました。</p>';
+    //   document.getElementById("countdown-container").innerHTML = '<p class="countdown-done">イベントはすでに開催されました。</p>';
+    document.getElementById("countdown").style.display = "none";
     }
   }
 
