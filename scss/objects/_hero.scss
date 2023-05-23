@@ -468,11 +468,12 @@
         }
     }
     &__title {
-        width: 740px;
-        height: auto;
+        font-size: 156px;
+        line-height: 1;
+        font-family: $Reross;
 
         @include mq("sp") {
-            width: 340px;
+            font-size: 72px;
         }
 
         &--small {

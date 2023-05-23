@@ -129,4 +129,6 @@ window.addEventListener('scroll', () => {
     addVisibilityClass('.team-floatings');
     addVisibilityClass('.team-wrap');
     addVisibilityClass('.overview-inner');
+    addVisibilityClass('.schedule-floatings');
+    addVisibilityClass('.schedule-inner');
   });

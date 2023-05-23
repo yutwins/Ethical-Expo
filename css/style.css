@@ -303,6 +303,27 @@
     opacity: 1;
   }
 }
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 50%;
+    opacity: 1;
+  }
+}
 .inner {
   width: min(100% - 2rem, 1140px);
   margin-inline: auto;
@@ -329,6 +350,7 @@
 .section__title {
   font-size: 100px;
   opacity: 0;
+  font-family: "Reross", sans-serif;
 }
 @media (max-width: 767px) {
   .section__title {
@@ -1025,8 +1047,9 @@ p {
   }
 }
 .hero__title {
-  width: 740px;
-  height: auto;
+  font-size: 156px;
+  line-height: 1;
+  font-family: "Reross", sans-serif;
   -webkit-animation-name: fadeUpHeroTitle;
           animation-name: fadeUpHeroTitle;
   -webkit-animation-duration: 2.5s;
@@ -1044,7 +1067,7 @@ p {
 }
 @media (max-width: 767px) {
   .hero__title {
-    width: 340px;
+    font-size: 72px;
   }
 }
 .hero__title--small {
@@ -1597,9 +1620,9 @@ p {
 }
 
 .contents {
-  position: relative;
   background-color: #ECECEC;
   padding-bottom: 200px;
+  position: relative;
 }
 .contents::before {
   content: "";
@@ -1629,7 +1652,7 @@ p {
 @media (max-width: 767px) {
   .contents__title {
     top: -24px;
-    left: 50%;
+    left: 15%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
     font-size: 48px;
@@ -1827,6 +1850,749 @@ p {
   .contents-item__text {
     margin-top: 12px;
     font-size: 14px;
+  }
+}
+
+.schedule {
+  position: relative;
+  background-color: #000;
+}
+.schedule-floatings {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.schedule-floatings.visible {
+  -webkit-animation-name: Opacity;
+          animation-name: Opacity;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.schedule-floating {
+  position: absolute;
+  height: auto;
+}
+.schedule-floating01 {
+  width: 80px;
+  top: 20%;
+  left: 5%;
+  -webkit-animation-name: float01;
+          animation-name: float01;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@media (max-width: 767px) {
+  .schedule-floating01 {
+    width: 60px;
+    top: 0;
+    left: 10%;
+  }
+}
+.schedule-floating02 {
+  width: 80px;
+  top: 21%;
+  right: 0;
+  -webkit-animation-name: float02;
+          animation-name: float02;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@media (max-width: 767px) {
+  .schedule-floating02 {
+    width: 60px;
+    top: 32px;
+    right: 8%;
+  }
+}
+.schedule-floating03 {
+  width: 100px;
+  top: 30%;
+  left: 0;
+  -webkit-animation-name: float03;
+          animation-name: float03;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@media (max-width: 767px) {
+  .schedule-floating03 {
+    width: 90px;
+    top: 40px;
+    left: -5%;
+  }
+}
+.schedule-floating04 {
+  width: 50px;
+  top: 32%;
+  right: 5%;
+  -webkit-animation-name: float04;
+          animation-name: float04;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@media (max-width: 767px) {
+  .schedule-floating04 {
+    width: 50px;
+    top: 12%;
+    right: 5%;
+  }
+}
+.schedule-floating05 {
+  width: 24px;
+  top: 50%;
+  left: 10%;
+  -webkit-animation-name: float02;
+          animation-name: float02;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@media (max-width: 767px) {
+  .schedule-floating05 {
+    width: 15px;
+    top: 12%;
+    left: 5%;
+  }
+}
+.schedule-inner {
+  position: relative;
+  z-index: 5;
+  padding: 200px 0;
+  opacity: 0;
+}
+.schedule-inner.visible {
+  -webkit-animation-name: fadeUpMin;
+          animation-name: fadeUpMin;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@media (max-width: 767px) {
+  .schedule-inner {
+    padding: 100px 0;
+  }
+}
+.schedule__title {
+  text-align: center;
+}
+.schedule-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 80px auto 0;
+}
+@media (max-width: 767px) {
+  .schedule-container {
+    max-width: 340px;
+    margin: 36px auto 0;
+  }
+}
+.schedule-btns {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.schedule-tab__button {
+  width: 50%;
+  color: #464646;
+  font-size: 36px;
+  font-weight: bold;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .schedule-tab__button {
+    font-size: 18px;
+  }
+}
+.schedule-tab__button.active-button {
+  color: #fff;
+}
+.schedule-tab__button.active-button .schedule-tab__buttonLine {
+  background-color: #fff;
+}
+.schedule-tab__buttonLine {
+  width: 100%;
+  height: 4px;
+  display: block;
+  margin-top: 14px;
+  background-color: rgba(180, 180, 180, 0.5);
+}
+.schedule-tab__bg--sp {
+  display: none;
+}
+@media (max-width: 767px) {
+  .schedule-tab__bg--sp {
+    display: block;
+    width: 291px;
+    height: auto;
+    margin-top: 24px;
+  }
+}
+.schedule-tabs {
+  width: 100%;
+  height: 940px;
+  margin-top: 60px;
+  position: relative;
+}
+.schedule-tabs::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../../images/EE-schedule-bg.png) no-repeat center center/contain;
+}
+@media (max-width: 767px) {
+  .schedule-tabs {
+    height: auto;
+    margin-top: 24px;
+  }
+  .schedule-tabs::before {
+    display: none;
+  }
+}
+.schedule-tabContent {
+  display: none;
+  position: relative;
+  z-index: 5;
+}
+.schedule-tabContent.active {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 22px;
+  max-width: 800px;
+  margin-left: auto;
+  padding-top: 50px;
+}
+@media (max-width: 767px) {
+  .schedule-tabContent.active {
+    gap: 10px;
+    padding-top: 0;
+  }
+}
+.schedule-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+.schedule-modal__content {
+  width: 64.2%;
+  min-height: 400px;
+  height: auto;
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #1D1D1D;
+  padding: 60px 100px;
+  border: 1px solid #888;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: #fff;
+  border-radius: 29px;
+  -webkit-animation-name: animatetop;
+          animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+          animation-duration: 0.4s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@media (max-width: 767px) {
+  .schedule-modal__content {
+    width: 90%;
+    max-width: 340px;
+    min-height: 310px;
+    padding: 40px 30px;
+  }
+}
+.schedule-modal__content .close {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.schedule-modal__head {
+  font-size: 28px;
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .schedule-modal__head {
+    font-size: 22px;
+  }
+}
+.schedule-modal__ul {
+  max-width: 720px;
+  margin: 50px auto 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  gap: 30px 8.5%;
+}
+@media (max-width: 767px) {
+  .schedule-modal__ul {
+    width: 100%;
+    max-width: 340px;
+    gap: 18px 5%;
+    margin: 32px auto 0;
+  }
+}
+.schedule-modal__list {
+  width: 19%;
+  width: 130px;
+  text-align: center;
+}
+.schedule-modal__list:first-child {
+  margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .schedule-modal__list {
+    width: 46%;
+  }
+}
+.schedule-modal__list.visible {
+  -webkit-animation-name: fadeUpMin;
+          animation-name: fadeUpMin;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.schedule-modal__listImg {
+  width: 100%;
+  height: auto;
+}
+.schedule-modal__listName {
+  font-size: 18px;
+  font-weight: 500;
+}
+@media (max-width: 767px) {
+  .schedule-modal__listName {
+    font-size: 16px;
+  }
+}
+.schedule-modal__listBusiness {
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 500;
+  border: 1px solid #ECECEC;
+  overflow: hidden;
+  position: relative;
+}
+.schedule-modal__listBusiness::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #F9F9F9;
+  z-index: -1;
+}
+.schedule-modal__listBusiness.artist {
+  color: #0000FF;
+  background: -webkit-linear-gradient(0deg, #0000FF, #8787FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.schedule-modal__listBusiness.influencer {
+  color: #FF0000;
+  background: -webkit-linear-gradient(0deg, #FF0000, #FF7979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+@media (max-width: 767px) {
+  .schedule-modal__listBusiness {
+    padding: 2px 5px;
+    font-size: 10px;
+  }
+}
+.schedule-mainStage, .schedule-subStage {
+  width: 48.75%;
+}
+@media (max-width: 767px) {
+  .schedule-mainStage, .schedule-subStage {
+    width: 48.5%;
+  }
+}
+.schedule-mainStage__item, .schedule-subStage__item {
+  width: 100%;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 5px;
+}
+.schedule-mainStage__itemHeadArea, .schedule-subStage__itemHeadArea {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+}
+.schedule-mainStage__itemIcon, .schedule-subStage__itemIcon {
+  width: 12px;
+  height: auto;
+}
+.schedule-mainStage__itemTime, .schedule-subStage__itemTime {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+@media (max-width: 767px) {
+  .schedule-mainStage__itemTime, .schedule-subStage__itemTime {
+    font-size: 14px;
+  }
+}
+.schedule-mainStage__itemMin, .schedule-subStage__itemMin {
+  font-weight: 500;
+}
+@media (max-width: 767px) {
+  .schedule-mainStage__itemMin, .schedule-subStage__itemMin {
+    font-size: 11px;
+  }
+}
+.schedule-mainStage__itemMin.yellow, .schedule-subStage__itemMin.yellow {
+  color: #FFC700;
+  background: -webkit-linear-gradient(-90deg, #FFC700, #FFEF99);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.schedule-mainStage__itemMin.green, .schedule-subStage__itemMin.green {
+  color: #00FF00;
+  background: -webkit-linear-gradient(180deg, #00FF00, #C5FFC5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.schedule-mainStage {
+  padding-top: 250px;
+}
+@media (max-width: 767px) {
+  .schedule-mainStage {
+    padding-top: 216px;
+  }
+}
+.schedule-mainStage__item {
+  padding: 22px 30px;
+  background-color: #2A2A2A;
+}
+@media (max-width: 767px) {
+  .schedule-mainStage__item {
+    padding: 36px 10px;
+  }
+}
+.schedule-mainStage__item:nth-child(2) {
+  margin-top: 92px;
+}
+.schedule-mainStage__itemTitle {
+  margin-top: 10px;
+  padding-left: 12px;
+  font-size: 18px;
+  position: relative;
+}
+@media (max-width: 767px) {
+  .schedule-mainStage__itemTitle {
+    font-size: 14px;
+  }
+}
+.schedule-mainStage__itemTitle::before {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 22px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: #fff;
+}
+.schedule-mainStage__itemModalBtns {
+  margin-top: 16px;
+}
+.schedule-mainStage__itemModalBtn--upper, .schedule-mainStage__itemModalBtn--bottom {
+  width: 100%;
+  max-width: 330px;
+  height: 47px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #fff;
+  border-radius: 64px;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+}
+.schedule-mainStage__itemModalBtn--upper:hover, .schedule-mainStage__itemModalBtn--bottom:hover {
+  opacity: 0.8;
+}
+.schedule-mainStage__itemModalBtn--upper::after, .schedule-mainStage__itemModalBtn--bottom::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: url(../../images/EE-plus-white.png) no-repeat center center/contain;
+}
+@media (max-width: 767px) {
+  .schedule-mainStage__itemModalBtn--upper, .schedule-mainStage__itemModalBtn--bottom {
+    max-width: 145px;
+    height: 32px;
+  }
+}
+.schedule-mainStage__itemModalBtn--bottom {
+  margin-top: 12px;
+}
+.schedule-mainStage__itemModalBtnText {
+  font-size: 14px;
+  font-weight: bold;
+}
+@media (max-width: 767px) {
+  .schedule-mainStage__itemModalBtnText {
+    font-size: 10px;
+  }
+}
+.schedule-subStage {
+  padding-top: 36px;
+}
+@media (max-width: 767px) {
+  .schedule-subStage {
+    padding-top: 0;
+  }
+}
+.schedule-subStage__item {
+  padding: 12px 20px;
+  background-color: #151515;
+}
+@media (max-width: 767px) {
+  .schedule-subStage__item {
+    padding: 10px;
+    margin-top: 10px;
+  }
+}
+.schedule-subStage__item:nth-child(2) {
+  margin-top: 46px;
+}
+@media (max-width: 767px) {
+  .schedule-subStage__item:nth-child(2) {
+    margin-top: 10px;
+  }
+}
+.schedule-subStage__item:nth-child(3) {
+  margin-top: 20px;
+}
+@media (max-width: 767px) {
+  .schedule-subStage__item:nth-child(3) {
+    margin-top: 10px;
+  }
+}
+.schedule-subStage__item:nth-child(4) {
+  margin-top: 42px;
+}
+@media (max-width: 767px) {
+  .schedule-subStage__item:nth-child(4) {
+    margin-top: 10px;
+  }
+}
+.schedule-subStage__item:nth-child(5) {
+  margin-top: 38px;
+}
+@media (max-width: 767px) {
+  .schedule-subStage__item:nth-child(5) {
+    margin-top: 10px;
+  }
+}
+.schedule-subStage__itemTitle {
+  margin-top: 4px;
+  padding-left: 12px;
+  font-size: 18px;
+  position: relative;
+}
+.schedule-subStage__itemTitle::before {
+  content: "";
+  display: block;
+  width: 2px;
+  height: 22px;
+  position: absolute;
+  top: 5px;
+  left: 0;
+  background-color: #fff;
+}
+@media (max-width: 767px) {
+  .schedule-subStage__itemTitle {
+    font-size: 14px;
+  }
+  .schedule-subStage__itemTitle::before {
+    top: 0;
+    -webkit-transform: initial;
+            transform: initial;
+  }
+}
+.schedule-subStage__itemTheme {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 6px;
+  margin-top: 12px;
+}
+@media (max-width: 767px) {
+  .schedule-subStage__itemTheme {
+    display: block;
+  }
+}
+.schedule-subStage__tag {
+  width: 70px;
+  height: 20px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+.schedule-subStage__text {
+  width: 78%;
+  font-weight: 500;
+  line-height: 1.2;
+}
+@media (max-width: 767px) {
+  .schedule-subStage__text {
+    width: 100%;
+    margin-top: 4px;
+    font-size: 12px;
   }
 }
 
@@ -2132,7 +2898,7 @@ p {
 }
 .performer-inner {
   position: relative;
-  z-index: 5;
+  z-index: 3;
   padding-bottom: 155px;
 }
 @media (max-width: 767px) {
@@ -2764,6 +3530,14 @@ p {
   border-radius: 64px;
   -webkit-box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.3);
           box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+.layout-btn:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
 }
 @media (max-width: 767px) {
   .layout-btn {

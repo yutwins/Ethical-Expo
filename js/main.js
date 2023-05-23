@@ -74,3 +74,64 @@ function countdown() {
 
   countdown();
   setInterval(countdown, 1000);
+
+
+
+  // タブ切り替えメニュー
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.schedule-tab__button');
+    const tabContents = document.querySelectorAll('.schedule-tabContent');
+
+    function switchContent(index) {
+        tabContents.forEach(function(content) {
+            content.classList.remove('active');
+        });
+        tabContents[index].classList.add('active');
+    }
+
+    function updateButtonColor() {
+        tabButtons.forEach(function(button, index) {
+            if (tabContents[index % 2].classList.contains('active')) {
+                button.classList.add('active-button');
+            } else {
+                button.classList.remove('active-button');
+            }
+        });
+    }
+
+    tabButtons.forEach(function(button, index) {
+        button.addEventListener('click', function() {
+            switchContent(index % 2);
+            updateButtonColor();
+            if (index < 2) {
+                scrollToContent();
+            }
+        });
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const modalBtns = document.getElementsByClassName("schedule-mainStage__itemModalBtn");
+  const modals = document.getElementsByClassName("schedule-modal");
+  const closes = document.getElementsByClassName("close");
+
+  for (let i = 0; i < modalBtns.length; i++) {
+      modalBtns[i].onclick = function() {
+          modals[i].style.display = "block";
+      }
+
+      closes[i].onclick = function() {
+          modals[i].style.display = "none";
+      }
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      for (let i = 0; i < modals.length; i++) {
+          if (event.target == modals[i]) {
+              modals[i].style.display = "none";
+          }
+      }
+  }
+});

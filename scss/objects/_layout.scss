@@ -127,6 +127,12 @@
         background-color: $color_black01;
         border-radius: 64px;
         box-shadow: 10px 20px 40px rgba($PureBlack, .30);
+        transition: all 0.3s ease 0s;
+
+        &:hover {
+            box-shadow: none;
+            transform: translateY(3px);
+        }
 
         @include mq("sp") {
             width: 284px;
