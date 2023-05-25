@@ -44,6 +44,8 @@ $breakpoints: (
     font-size: 100px;
     opacity: 0;
     font-family: $Reross;
+    position: relative;
+    z-index: 5;
 
     @include mq("sp") {
         font-size: 48px;        

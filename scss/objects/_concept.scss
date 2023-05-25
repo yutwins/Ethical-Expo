@@ -3,23 +3,26 @@
 .concept {
     position: relative;
     overflow: hidden;
-    background-color: $color-gray01;
 
+    &::before,
     &::after {
         content: "";
         display: block;
-        width: 160%;
         width: 100%;
-        height: 300px;
+        height: 100%;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: url(../../images/EE-concept-bgText.png) repeat-x;
-        background-size: 50%;
-        background-size: cover;
-	    animation: scroll-anim 10s linear infinite;
+        top: 0;
+        left: 0;
     }
+    &::before {
+        background: url(../../images/EE-noise-bg.png) no-repeat center center / cover;
+        z-index: 5;
+    }
+    &::after {
+        background-color: $color-gray01;
+        z-index: -1;
+    }
+    
 
     @include mq("sp") {
 
@@ -34,6 +37,13 @@
         }
     }
 
+    &-container {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        
+    }
+
     &-floatings {
         width: 100%;
         height: 100%;
@@ -41,7 +51,23 @@
         top: 0;
         left: 0;
         opacity: 0;
-        z-index: 5;
+        z-index: 2;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 160%;
+            width: 100%;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: url(../images/EE-concept-bgText.png) repeat-x;
+            background-size: 50%;
+            background-size: cover;
+            animation: scroll-anim 10s linear infinite;
+        }
         
         &.visible {
 
@@ -58,6 +84,7 @@
     &-floating {
         position: absolute;
         height: auto;
+        z-index: 5;
     }
     &-floating01{
         width: 50px;
@@ -148,7 +175,7 @@
     &-inner {
         padding-top: 330px;
         padding-bottom: 400px;
-        max-width: 700px;
+        max-width: 725px;
         margin: 0 auto;
         position: relative;
         z-index: 5;
@@ -160,9 +187,11 @@
     }
 
     &-msgArea {
+        position: relative;
+        z-index: 10;
 
         @include mq("sp") {
-            max-width: 340px;
+            max-width: 350px;
             margin: 0 auto;
         }
     }
@@ -227,6 +256,8 @@
     
     &-headArea {
         overflow: hidden;
+        position: relative;
+        z-index: 10;
 
         @include mq("sp") {
             max-width: 340px;

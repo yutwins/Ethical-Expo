@@ -4,6 +4,25 @@
     position: relative;
     background-color: $PureBlack;
 
+    
+    &-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url(../images/EE-noise-bg.png) no-repeat center center / cover;
+        }
+        
+    }
+
     &-floatings {
         width: 100%;
         height: 100%;
@@ -11,6 +30,7 @@
         top: 0;
         left: 0;
         opacity: 0;
+
 
         &.visible {
             
@@ -249,21 +269,15 @@
         width: 100%;
         max-width: 100%;
         height: 100%;
-        // height: 100vh;
         overflow: auto; /* Enable scroll if needed */
         background-color: rgba(0,0,0,0.4);
         backdrop-filter: blur(10px);
-
-        @include mq("sp") {
-            
-        }
 
         &__content {
             width: 64.2%;
             min-height: 400px;
             height: auto;
             position: relative;
-            // position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -278,6 +292,7 @@
                 width: 90%;
                 max-width: 340px;
                 min-height: 310px;
+                max-height: 700px;
                 padding: 40px 30px;
             }
 
@@ -291,12 +306,19 @@
                 bottom: -50px;
                 left: 50%;
                 transform: translateX(-50%);
+                font-family: $Reross;
                 cursor: pointer;
+                
+                @include mq("sp") {
+                    font-size: 12px;
+                    bottom: -30px;
+                }
             }
         }
 
         &__head {
             font-size: 28px;
+            line-height: 1;
             text-align: center;
 
             @include mq("sp") {
@@ -314,8 +336,8 @@
             @include mq("sp") {
                 width: 100%;
                 max-width: 340px;
-                gap: 18px 5%;
-                margin: 32px auto 0;
+                gap: 16px 5%;
+                margin: 24px auto 0;
             }
         }
 
@@ -361,35 +383,14 @@
             font-size: 12px;
             line-height: 1;
             font-weight: 500;
-            border: 1px solid $color_gray01;
-            overflow: hidden;
-            position: relative;
-
-            &::before {
-                content: "";
-                display: block;
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                background-color: #F9F9F9;
-                z-index: -1;
-            }
             
             &.artist {
-                color: #0000FF;
-                background: -webkit-linear-gradient(0deg, #0000FF, #8787FF);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
+                color: #8787FF;
             }
             &.influencer {
-                color: #FF0000;
-                background: -webkit-linear-gradient(0deg, #FF0000, #FF7979);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-
+                color: #FF7979;
             }
+            
 
             @include mq("sp") {
                 padding: 2px 5px;
@@ -397,6 +398,7 @@
             }
         }
     }
+
     
 
     &-mainStage,
