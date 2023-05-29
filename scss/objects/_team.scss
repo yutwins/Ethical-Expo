@@ -636,5 +636,33 @@
                 width: 39px;
             }
         }
+        .team-list__img58 {
+            width: 80px;
+
+            @include mq("sp") {
+                width: 45px;
+            }
+        }
+        .team-list__img59 {
+            width: 80px;
+
+            @include mq("sp") {
+                width: 45px;
+            }
+        }
+        .team-list__img60 {
+            width: 60px;
+
+            @include mq("sp") {
+                width: 32px;
+            }
+        }
+        .team-list__img61 {
+            width: 71px;
+
+            @include mq("sp") {
+                width: 39px;
+            }
+        }
     }
 }

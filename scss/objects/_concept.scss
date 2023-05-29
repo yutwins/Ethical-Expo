@@ -27,7 +27,7 @@
     @include mq("sp") {
 
         &::after {
-            height: 100px;
+            height: 100%;
         }
     }
 

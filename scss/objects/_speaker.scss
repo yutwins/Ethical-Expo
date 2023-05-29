@@ -237,7 +237,6 @@
 
     &-ul {
         display: flex;
-        justify-content: center;
         flex-wrap: wrap;
         gap: 60px 3.39%;
         margin-top: 100px;
@@ -252,6 +251,7 @@
 
     &-list {
         width: 22.4%;
+        max-width: 340px;
         position: relative;
 
         @include mq("sp") {
