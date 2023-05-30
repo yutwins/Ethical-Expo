@@ -183,3 +183,34 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
   
+
+  //スクロールした時にCTA部分をフワッと表示
+(function() {
+    const cta = document.querySelector('.cta');
+    const isUp = (function() {
+      const scrollElement = document.scrollingElement;
+      let flag, prePoint, scrollPoint;
+      return function() {
+        scrollPoint = scrollElement.scrollTop;
+        flag = prePoint > scrollPoint ? true : false;
+        prePoint = scrollPoint;
+        return flag;
+      }
+    }());
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 100) {
+        if (isUp()) {
+          cta.classList.remove('is-scrolled');
+        } else {
+          cta.classList.add('is-scrolled')
+        }
+      } else {
+        cta.classList.remove('is-scrolled');
+      }
+      
+      if (window.pageYOffset + window.innerHeight >= document.documentElement.scrollHeight) {
+        cta.classList.add('is-scrolled');
+      }
+    })
+  }());

@@ -387,6 +387,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -432,6 +433,91 @@ a {
 
 p {
   margin: 0;
+}
+
+.cta {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  -webkit-box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  -webkit-transform: translateY(200%);
+          transform: translateY(200%);
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+  display: none;
+}
+.cta.is-scrolled {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+@media (max-width: 767px) {
+  .cta {
+    display: block;
+  }
+}
+.cta-inner {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 5px 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3%;
+}
+.cta-logoArea {
+  width: 31%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  background-color: #000;
+  border-radius: 8px;
+}
+.cta-logo {
+  display: grid;
+  place-content: center;
+  height: 50px;
+}
+.cta-logo__text {
+  font-family: "reross-rectangular", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+.cta-btnArea {
+  width: 66%;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  background-color: #000;
+  border-radius: 8px;
+}
+.cta-btn {
+  width: 180px;
+  height: 42px;
+  border-radius: 42px;
+  background-color: #fff;
+  display: grid;
+  place-items: center;
+}
+.cta-btn__text {
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .hero {
@@ -4581,6 +4667,7 @@ p {
 }
 @media (max-width: 767px) {
   .overview {
+    margin-bottom: 70px;
     padding-bottom: 20px;
   }
 }
