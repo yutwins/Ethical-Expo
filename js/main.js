@@ -113,31 +113,6 @@ function countdown() {
 
 
 // モーダルウィンドウ
-// document.addEventListener("DOMContentLoaded", function() {
-//   const modalBtns = document.getElementsByClassName("schedule-mainStage__itemModalBtn");
-//   const modals = document.getElementsByClassName("schedule-modal");
-//   const modalsContent = document.getElementsByClassName("schedule-modal__content");
-//   const closes = document.getElementsByClassName("close");
-
-//   for (let i = 0; i < modalBtns.length; i++) {
-//       modalBtns[i].onclick = function() {
-//           modals[i].style.display = "block";
-//       }
-
-//       closes[i].onclick = function() {
-//           modals[i].style.display = "none";
-//       }
-//   }
-
-//   // When the user clicks anywhere outside of the modal, close it
-//   window.onclick = function(event) {
-//       for (let i = 0; i < modals.length; i++) {
-//           if (event.target == modals[i]) {
-//               modals[i].style.display = "none";
-//           }
-//       }
-//   }
-// });
 document.addEventListener("DOMContentLoaded", function() {
     const modalBtns = document.getElementsByClassName("schedule-mainStage__itemModalBtn");
     const modals = document.getElementsByClassName("schedule-modal");
@@ -156,6 +131,7 @@ document.addEventListener("DOMContentLoaded", function() {
         closes[i].onclick = function() {
             // modals[i].style.display = "none";
             modals[i].classList.add('modal-fadeout');
+            
             // modalsBg[i].style.display = "none";   
             modalsBg[i].classList.add('modal-fadeout');
         }

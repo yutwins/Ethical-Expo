@@ -31,7 +31,7 @@
         align-items: center;
         gap: 3%;
 
-        @media (max-width: 350px) {
+        @media (max-width: 400px) {
             padding: 5px 2%;
         }
     }
@@ -54,6 +54,7 @@
             font-size: 12px;
             font-weight: bold;
             color: $PureWhite;
+            white-space: nowrap;
         }
     }
 
