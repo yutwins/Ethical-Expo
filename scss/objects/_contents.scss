@@ -37,6 +37,9 @@
             transform: translateX(-50%);
             font-size: 48px;
         }
+        @media (max-width: 350px) {
+            left: 0%;
+        }
     }
 
     &-inner {

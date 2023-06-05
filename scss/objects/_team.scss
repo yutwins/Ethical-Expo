@@ -11,6 +11,18 @@
         left: 0;
         opacity: 0;
 
+        &::before {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: url(../../images/EE-noise-bg.png) no-repeat center center / cover;
+            z-index: 5;
+        }
+
         &.visible {
             
             @include animation(
@@ -195,9 +207,32 @@
         }
 
         &__head {
+            font-family: $Reross;
             font-size: 25px;
             font-weight: bold;
             text-align: center;
+        }
+
+        &__big {
+            width: 100%;
+            height: 170px;
+            margin-top: 26px;
+            background-color: $PureWhite;
+            display: grid;
+            place-items: center;
+
+            @include mq("sp") {
+                margin-top: 12px;
+                height: 61px;
+            }
+        }
+        &__bigImg {
+            width: 300px;
+            height: auto;
+
+            @include mq("sp") {
+                width: 107px;
+            }
         }
     }
 
@@ -207,14 +242,21 @@
         display: grid;
         place-content: center;
         background-color: $PureWhite;
-        font-size: 15px;
+        font-size: 21px;
         font-weight: 500;
         text-align: center;
 
         @include mq("sp") {
             width: 48.5%;
             height: 50px;
-            font-size: 12px;
+            font-size: 8px;
+        }
+
+        &.jt {
+            
+            @include mq("sp") {
+                font-size: 18px;
+            }
         }
 
         &__img {
@@ -381,7 +423,308 @@
             width: 184px;
 
             @include mq("sp") {
-                width: 83px;
+                width: 59px;
+            }
+        }
+        .team-list__img24 {
+            width: 90px;
+
+            @include mq("sp") {
+                width: 50px;
+            }
+        }
+        .team-list__img25 {
+            width: 88px;
+
+            @include mq("sp") {
+                width: 49px;
+            }
+        }
+        .team-list__img26 {
+            width: 107px;
+
+            @include mq("sp") {
+                width: 59px;
+            }
+        }
+        .team-list__img27 {
+            width: 227px;
+
+            @include mq("sp") {
+                width: 125px;
+            }
+        }
+        .team-list__img28 {
+            width: 100%;
+        }
+        .team-list__img29 {
+            width: 57px;
+
+            @include mq("sp") {
+                width: 32px;
+            }
+        }
+        .team-list__img30 {
+            width: 62px;
+            
+            @include mq("sp") {
+                width: 34px;
+            }
+        }
+        .team-list__img31 {
+            width: 47px;
+            
+            @include mq("sp") {
+                width: 26px;
+            }
+        }
+        .team-list__img32 {
+            width: 132px;
+
+            @include mq("sp") {
+                width: 73px;
+            }
+        }
+        .team-list__img33 {
+            width: 100%;
+        }
+        .team-list__img34 {
+            width: 57px;
+
+            @include mq("sp") {
+                width: 32px;
+            }
+        }
+        .team-list__img35 {
+            width: 197px;
+
+            @include mq("sp") {
+                width: 109px;
+            }
+        }
+        .team-list__img36 {
+            width: 131px;
+
+            @include mq("sp") {
+                width: 73px;
+            }
+        }
+        .team-list__img37 {
+            width: 100%;
+        }
+        .team-list__img38 {
+            width: 57px;
+
+            @include mq("sp") {
+                width: 32px;
+            }
+        }
+        .team-list__img39 {
+            width: 163px;
+
+            @include mq("sp") {
+                width: 90px;
+            }
+        }
+        .team-list__img40 {
+            width: 64px;
+
+            @include mq("sp") {
+                width: 36px;
+            }
+        }
+        .team-list__img41 {
+            width: 51px;
+
+            @include mq("sp") {
+                width: 28px;
+            }
+        }
+        .team-list__img42 {
+            width: 69px;
+
+            @include mq("sp") {
+                width: 38px;
+            }
+        }
+        .team-list__img43 {
+            width: 55px;
+
+            @include mq("sp") {
+                width: 31px;
+            }
+        }
+        .team-list__img44 {
+            width: 69px;
+
+            @include mq("sp") {
+                width: 38px;
+            }
+        }
+        .team-list__img45 {
+            width: 124px;
+
+            @include mq("sp") {
+                width: 69px;
+            }
+        }
+        .team-list__img46 {
+            width: 69px;
+
+            @include mq("sp") {
+                width: 38px;
+            }
+        }
+        .team-list__img47 {
+            width: 85px;
+
+            @include mq("sp") {
+                width: 47px;
+            }
+        }
+        .team-list__img48 {
+            width: 79px;
+
+            @include mq("sp") {
+                width: 44px;
+            }
+        }
+        .team-list__img49 {
+            width: 100%;
+        }
+        .team-list__img50 {
+            width: 100%;
+        }
+        .team-list__img51 {
+            width: 79px;
+
+            @include mq("sp") {
+                width: 44px;
+            }
+        }
+        .team-list__img52 {
+            width: 100%;
+        }
+        .team-list__img53 {
+            width: 68px;
+
+            @include mq("sp") {
+                width: 38px;
+            }
+        }
+        .team-list__img54 {
+            width: 100%;
+        }
+        .team-list__img55 {
+            width: 68px;
+
+            @include mq("sp") {
+                width: 38px;
+            }
+        }
+        .team-list__img56 {
+            width: 198px;
+
+            @include mq("sp") {
+                width: 109px;
+            }
+        }
+        .team-list__img57 {
+            width: 71px;
+
+            @include mq("sp") {
+                width: 39px;
+            }
+        }
+        .team-list__img58 {
+            width: 80px;
+
+            @include mq("sp") {
+                width: 45px;
+            }
+        }
+        .team-list__img59 {
+            width: 80px;
+
+            @include mq("sp") {
+                width: 45px;
+            }
+        }
+        .team-list__img60 {
+            width: 60px;
+
+            @include mq("sp") {
+                width: 32px;
+            }
+        }
+        .team-list__img61 {
+            width: 71px;
+
+            @include mq("sp") {
+                width: 39px;
+            }
+        }
+        .team-list__img62 {
+            width: 71px;
+
+            @include mq("sp") {
+                width: 39px;
+            }
+        }
+        .team-list__img63 {
+            width: 80px;
+
+            @include mq("sp") {
+                width: 50px;
+            }
+        }
+        .team-list__img64 {
+            width: 160px;
+
+            @include mq("sp") {
+                width: 90px;
+            }
+        }
+        .team-list__img65 {
+            width: 160px;
+
+            @include mq("sp") {
+                width: 90px;
+            }
+        }
+        .team-list__img66 {
+            width: 160px;
+
+            @include mq("sp") {
+                width: 90px;
+            }
+        }
+        .team-list__img68 {
+            width: 200px;
+
+            @include mq("sp") {
+                width: 100px;
+            }
+        }
+        .team-list__img69 {
+            width: 85px;
+
+            @include mq("sp") {
+                width: 50px;
+            }
+        }
+        .team-list__img70 {
+            width: 85px;
+
+            @include mq("sp") {
+                width: 50px;
+            }
+        }
+        .team-list__img71 {
+            width: 140px;
+
+            @include mq("sp") {
+                width: 80px;
             }
         }
     }

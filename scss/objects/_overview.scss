@@ -3,8 +3,21 @@
  .overview {
     background-color: $PureBlack;
     padding-bottom: 100px;
+    position: relative;
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: url(../images/EE-noise-bg.png) no-repeat center center / cover;
+    }
 
     @include mq("sp") {
+        margin-bottom: 70px;
         padding-bottom: 20px;
     }
 
@@ -15,6 +28,8 @@
         padding-top: 200px;
         padding-bottom: 90px;
         opacity: 0;
+        position: relative;
+        z-index: 5;
 
         &.visible {
 

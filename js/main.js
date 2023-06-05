@@ -114,26 +114,79 @@ function countdown() {
 
 // モーダルウィンドウ
 document.addEventListener("DOMContentLoaded", function() {
-  const modalBtns = document.getElementsByClassName("schedule-mainStage__itemModalBtn");
-  const modals = document.getElementsByClassName("schedule-modal");
-  const closes = document.getElementsByClassName("close");
+    const modalBtns = document.getElementsByClassName("schedule-mainStage__itemModalBtn");
+    const modals = document.getElementsByClassName("schedule-modal");
+    const modalsContent = document.getElementsByClassName("schedule-modal__content");
+    const modalsBg = document.getElementsByClassName("modal-background");
+    const closes = document.getElementsByClassName("close");
+  
+    for (let i = 0; i < modalBtns.length; i++) {
+        modalBtns[i].onclick = function() {
+            // modals[i].style.display = "block";
+            modals[i].classList.remove('modal-fadeout');
+            // modalsBg[i].style.display = "block";   
+            modalsBg[i].classList.remove('modal-fadeout');
+        }
+        
+        closes[i].onclick = function() {
+            // modals[i].style.display = "none";
+            modals[i].classList.add('modal-fadeout');
+            
+            // modalsBg[i].style.display = "none";   
+            modalsBg[i].classList.add('modal-fadeout');
+        }
+    }
+  
+    // When the user clicks anywhere outside of the modal content, close it
+    window.onclick = function(event) {
+        for (let i = 0; i < modals.length; i++) {
+            if (event.target == modals[i]) {
+                // modals[i].style.display = "none";
+                modals[i].classList.add('modal-fadeout');
+            }
+            let targetElement = event.target; // clicked element
+            do {
+              if (targetElement == modalsBg[i]) {
+                // modals[i].style.display = "none";
+                modals[i].classList.add('modal-fadeout');
+                // alert('test')
+                return;
+              }
+              // Go up the DOM
+              targetElement = targetElement.parentNode;
+            } while (targetElement);
+        }
+    }
+  });
+  
 
-  for (let i = 0; i < modalBtns.length; i++) {
-      modalBtns[i].onclick = function() {
-          modals[i].style.display = "block";
+  //スクロールした時にCTA部分をフワッと表示
+(function() {
+    const cta = document.querySelector('.cta');
+    const isUp = (function() {
+      const scrollElement = document.scrollingElement;
+      let flag, prePoint, scrollPoint;
+      return function() {
+        scrollPoint = scrollElement.scrollTop;
+        flag = prePoint > scrollPoint ? true : false;
+        prePoint = scrollPoint;
+        return flag;
       }
-
-      closes[i].onclick = function() {
-          modals[i].style.display = "none";
+    }());
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 100) {
+        if (isUp()) {
+          cta.classList.remove('is-scrolled');
+        } else {
+          cta.classList.add('is-scrolled')
+        }
+      } else {
+        cta.classList.remove('is-scrolled');
       }
-  }
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-      for (let i = 0; i < modals.length; i++) {
-          if (event.target == modals[i]) {
-              modals[i].style.display = "none";
-          }
+      
+      if (window.pageYOffset + window.innerHeight >= document.documentElement.scrollHeight) {
+        cta.classList.add('is-scrolled');
       }
-  }
-});
+    })
+  }());
