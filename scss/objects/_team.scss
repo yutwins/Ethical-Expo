@@ -742,5 +742,19 @@
                 width: 60px;
             }
         }
+        .team-list__img74 {
+            width: 200px;
+
+            @include mq("sp") {
+                width: 120px;
+            }
+        }
+        .team-list__img75 {
+            width: 220px;
+
+            @include mq("sp") {
+                width: 120px;
+            }
+        }
     }
 }

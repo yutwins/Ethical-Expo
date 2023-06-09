@@ -4796,6 +4796,22 @@ p {
     width: 60px;
   }
 }
+.team-list .team-list__img74 {
+  width: 200px;
+}
+@media (max-width: 767px) {
+  .team-list .team-list__img74 {
+    width: 120px;
+  }
+}
+.team-list .team-list__img75 {
+  width: 220px;
+}
+@media (max-width: 767px) {
+  .team-list .team-list__img75 {
+    width: 120px;
+  }
+}
 
 .overview {
   background-color: #000;
